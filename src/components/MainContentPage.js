@@ -1,16 +1,22 @@
 import React from 'react'
+import logo from './Beautiful-gray-wave-vector-PNG.png';
+import CardJs from './CardJs';
+
 
 function MainContentPage() {
   return (
-    <div>
-        <div className="MainContentPageTop">
-         
-        </div>
-        <div className="MainContentPageBottom">
-
-        </div>
+    <div className='MainContentPageJs'>
+          <div className='MainContentPageJsTop'>
+                <input type="text" className='SearchBox' placeholder='Search' />
+          </div>
+          <div className='MainContentPageJsBottom'>
+                <div>
+                  
+                </div>
+          </div>
     </div>
   )
 }
 
 export default MainContentPage
+
