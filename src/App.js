@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 import {
   createBrowserRouter,
@@ -13,8 +14,11 @@ import MainContentPage from './components/MainContentPage';
 import SideIconsJs from './components/SideIconsJs';
 import RightSideNav from './components/RightSideNav';
 import Friend from './components/Friend';
+import Notification from './components/Notification';
+import { VideoRoom } from './components/VideoRoom';
 
 function App() {
+
   return (
     <BrowserRouter>
 
@@ -40,16 +44,27 @@ function App() {
       </div>
 
       <div className='MainContent'>
+      {/* <div className="App">
+      <h1>WDJ Virtual Call</h1>
+
+      
+    </div> */}
       <Routes>
       <Route exact path="/" element= <MainContentPage/> />
       <Route exact path="/friend" element=<Friend/> />
+      
+      {/* <Route exact path="/call" element=<VideoRoom/> /> */}
      
       </Routes>
       
             </div>
 
       <div className='RightSideNav'>
-       <RightSideNav/>
+      
+        
+
+       <RightSideNav/> 
+
       </div>
     </div>
     </BrowserRouter>

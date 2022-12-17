@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import Avatar from '@mui/material/Avatar';
 import {IoVideocam} from 'react-icons/io5';
 import {RiSendPlaneLine} from 'react-icons/ri';
+import {RxExit} from 'react-icons/rx';
+import { VideoRoom } from './VideoRoom';
 
 
 let queryString = window.location.search
@@ -17,6 +19,8 @@ let client = AgoraRTM.createInstance(APP_ID);
 let uid = uuidv4();
 
 function Friend() {
+    const [joined, setJoined] = useState(false);
+
     const messagesRef = useRef();
     const [messages, setMessages] = useState([]);
     const [text, setText] = useState('');
@@ -50,7 +54,7 @@ function Friend() {
         };
         disconnect();
       };
-    }, []);
+    }, [joined]);
   
     useEffect(() => {
       messagesRef.current.scrollTop =
@@ -80,10 +84,17 @@ function Friend() {
             </div>
         <div className='AvatarVideoCall'>
 
-        <IoVideocam/>
+        {!joined && (
+          <IoVideocam onClick={() => setJoined(true)}/>
+      )}
+        {joined && (
+          <RxExit onClick={() => setJoined(false)} style={{color:'red'}}/>
+      )}
         </div>
         </div>
         <div className="panel">
+        {joined && <VideoRoom />}
+        {/* {!joined&&<p>You've left the chat</p>} */}
         <div className="messages" ref={messagesRef}>
           <div className="inner">
             {messages.map((message, idx) => (
