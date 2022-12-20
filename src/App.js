@@ -16,6 +16,10 @@ import RightSideNav from './components/RightSideNav';
 import Friend from './components/Friend';
 import Notification from './components/Notification';
 import { VideoRoom } from './components/VideoRoom';
+import LiveStreams from './components/LiveStreams';
+import LiveStream from './components/LiveStream';
+import Card from './components/Card';
+import Organization from './components/Organization';
 
 function App() {
 
@@ -52,6 +56,9 @@ function App() {
       <Routes>
       <Route exact path="/" element= <MainContentPage/> />
       <Route exact path="/friend" element=<Friend/> />
+      <Route exact path="/live-stream/:roomId" element=<LiveStream/> />
+      <Route exact path="/live-streams" element=<LiveStreams/> />
+      <Route exact path="/organization" element=<Organization/> />
       
       {/* <Route exact path="/call" element=<VideoRoom/> /> */}
      
