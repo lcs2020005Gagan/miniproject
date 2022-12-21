@@ -30,13 +30,15 @@
   flex-direction: row;
   min-height: 85vh;
   max-height: 85vh;
+  /* background-image:linear-gradient(#2c2e43,#8672af) ; */
+
 }
 .SideIcons{
   display:flex;
   flex-direction: column;
   width: 25%;
   /* max-width: 5vw; */
-  background-image:linear-gradient(#2c2e43,#8672af) ;
+  /* background-image:linear-gradient(#2c2e43,#8672af) ; */
   border-right: 0.1rem;
   border-right-style: solid;
   border-image: 
@@ -52,7 +54,7 @@
   flex-direction: column;
   width: 75%;
   /* max-width: 15vw; */
-  background-image:linear-gradient(#2c2e43,#8672af) ;
+  /* background-image:linear-gradient(#2c2e43,#8672af) ; */
     overflow-y: auto;
 
   /* backdrop-filter:blur(200px); */
@@ -63,18 +65,46 @@
   flex-direction: column;
   min-height: 15vh;
   max-height: 15vh;
+  /* background-image:linear-gradient(#8672af,#2c2e43) ; */
+
+  
 }
 .SpeechWave{
   min-height: 7.5vh;
   max-height: 7.5vh;
-  background-color: #513a72;
+  /* border-top:1px solid white; */
+  /* background-color: #513a72; */
+}
+.hoverEffects{
+  /* transition-duration: 0.6s; */
+}
+.hoverEffects:hover{
+cursor: pointer;
+filter: brightness(70%);
 }
 .AudioControls{
   min-height: 7.5vh;
   max-height: 7.5vh;
-  background-color: #191d36;
+  /* border-top:1px solid white; */
+  /* background-color: #191d36; */
 }
-
+.AudioControlsJs{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  font-size: 1rem;
+  color: white;
+  align-items: center;
+  background-color: black;
+  padding: 1rem;
+}
+.AudioControlsProfile{
+  width:2.2rem ;
+  height: 2.2rem;;
+  background-color: red;
+  border-radius: 50%;
+}
 
 
 .MainContent{
@@ -96,14 +126,15 @@
   /* float: right; */
   /* background-image: linear-gradient(#2c2e43,#535564); */
   background-color: #1e1f3b;
-  border-left: 0.1rem;
+  /* border-left: 0.1rem;
   border-left-style: solid;
   border-image: 
   linear-gradient(
     to bottom, 
     #2b2b38,
     grey
-  ) 1 100%;;  /* min-height: 100vh; */
+  ) 1 100%;;  min-height: 100vh; */
+  border-left:1px solid grey;
   height: 100vh;
   width: 20vw;
   overflow: auto;
@@ -146,12 +177,26 @@
   color: white;
   word-wrap: break-word;
 }
-.LeftSideNavList>li:hover{
-  /* background-image: linear-gradient(to right,#2f2756,#5b5189); */
-  background-image:linear-gradient(to right,#2c2e43,#8672af) ;
- 
+.UlList{
+  display: flex;
+  text-decoration: none;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  padding:0.4rem;
+  text-align: center;
+  list-style: none;
+  /* margin-top:1rem; */
+  border-radius: 0.3rem;;
+  color: white;
+  word-wrap: break-word;
+}
+.UlList:hover{
+  /* background-image:linear-gradient(to right,black,#8672af) ; */
+  background-color: black;
+ text-decoration: none; 
   border-radius:1rem;
-
+  color:white;
   cursor:pointer;
   opacity: 0.7;
 
@@ -346,7 +391,7 @@ min-width: 100%;
 .MainContentPageJsTop{
   display: flex;
   width: 100%;
-  padding:1.5rem;
+  padding-top:1rem;
   align-items: center;
   justify-content: center;
   min-height: 5vh;
@@ -354,14 +399,15 @@ min-width: 100%;
   /* border-bottom: 1px solid black; */
 }
 .SearchBox{
-  width: 60%;
+  width: 95%;
   background-color:#5b5189;
   border: 0;
   height: 2rem;
   margin: 2px;
   padding: 1rem;
-  color: white;
+  color: grey;
   border-radius: 2rem;
+  outline: none;
 }
 .MainContentPageJsBottom{
   width: 100%;
@@ -974,6 +1020,10 @@ border: 1px solid white;
   background-size: cover;
   background-repeat: no-repeat;
 }
+.footer h2{
+  font-family: monospace
+  ;
+}
 .newsletter-bx {
   background: #FFFFFF;
   border-radius: 55px;
@@ -1058,3 +1108,167 @@ border: 1px solid white;
   color:white;
 }
 /* footer css end */
+
+/* profile */
+.ProfileJs{
+  width: 100%;
+  /* padding:1rem; */
+  
+}
+.ProfileJsBanner{
+  width:100%;
+}
+.ProfileJsBanner img{
+  width:100%;
+  height: 17rem;
+  /* border-radius: 1rem; */
+  /* object-fit: fill; */
+}
+.ProfileJsProfilePic{
+  width:10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin-top:-6rem;
+  padding:1rem;
+  transition-duration: 0.6s;
+}
+.ProfileJsProfilePic:hover{
+  /* opacity: 0.7; */
+  filter: brightness(50%);
+  cursor: pointer;
+}
+.ProfileJsProfilePic img{
+  width:10rem;
+  height: 10rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.ProfileJsProfileInfo{
+  padding: 1rem;
+  color:grey;
+  font-size: 1rem;
+}
+
+.ProfileJsProfileInfoBioTop{
+  font-size: 1.5rem;
+  color:white;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ProfileJsProfileInfoBioTop h5{
+  color:white;
+  font-size: 3rem;
+}
+.MdModeEditOutline{
+  cursor: pointer;
+  transition-duration: 0.6s;
+
+}
+.MdModeEditOutline:hover{
+filter: brightness(60%);
+}
+.ProfileJsProfileInfoDetails{
+  font-size: 0.8rem;
+  color:white
+}
+.ProfileJsTabs{
+  display: flex;
+  overflow: auto;
+  /* height: 1rem; */
+  /* padding:1rem; */
+  width: 100%;
+  color: white;
+  /* background-image: linear-gradient(black,rgb(46, 44, 44)); */
+  list-style:none;
+  text-decoration: none;
+  justify-content: space-around;
+  border-bottom: 1px solid grey;
+  font-size: 1.2rem;;
+}
+.ProfileJsTabs li{
+  padding:1rem;
+  list-style: none;
+  cursor: pointer;
+  transition-duration: 0.6s;
+  text-decoration: none;
+  color:white;
+  text-underline-offset:unset;
+
+
+}
+.ProfileJsTabs li:hover{
+  color:grey;
+  /* border-bottom:1px solid grey */
+  /* transform: scale(1.01); */
+}
+
+.ProfileJsUnderTabs{
+  width:100%;
+  height:100%;
+  padding:1rem;
+}
+.ProfileJsUnderTabsCon{
+  width:100%;
+  height: 100%;;
+}
+/* card2 css */
+.Card2Info{
+  display: flex;
+  margin-left: auto;
+  border-left-radius: 1rem;
+  
+
+}
+.Card2Info{
+  width:48%;
+  height: 100%;
+  
+  /* background-color: red;; */
+  /* background: hsla(0, 0%, 100%, 0.6); */
+  filter: brightness(70%);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;;
+  display: flex;
+  flex-direction: column;
+  padding:1rem;
+  box-shadow: inset 0 0 100px transparent;
+  /* opacity: 0.6; */
+  z-index: 0;
+  justify-content: space-between;
+}
+.Card2InfoTitle{
+  color:white;
+  font-size: 2.5rem;;
+  font-weight: bold;
+  z-index: 1;
+}
+.Card2InfoDetail{
+  color:white;
+  font-size: 1rem;
+}
+.Card2InfoFoot{
+  display: flex; 
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color:rgb(250, 201, 201);
+}
+
+/* //stream css */
+.StreamJs{
+  width:100%;
+  height:100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  /* padding: 1rem; */
+  justify-content: center;
+
+}
+.StreamJs div{
+  /* height: 100%; */
+
+}
+#app{
+  height: 100%;
+}

@@ -20,6 +20,9 @@ function RightSideNav() {
             </div>
         </div>
         <div className="RightSideNavBottom">
+        <div className='MainContentPageJsTop'>
+                <input type="text" className='SearchBox' placeholder='Search twitter' />
+          </div>
             <div className='Profile'>
                 <div className='ProfileImgDiv'>
                     <svg viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" >

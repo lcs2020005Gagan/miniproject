@@ -6,7 +6,6 @@ function Card() {
 
 
         return (
-            <a href='www.twitter.com'>
     <div className="carddd">
         <img src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80' alt=''/>
         <div className='cardddimg'>
@@ -28,7 +27,6 @@ function Card() {
         </div>
 
     </div>
-    </a>
   )
 }
 

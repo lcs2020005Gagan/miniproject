@@ -6,9 +6,7 @@ import CardJs from './CardJs';
 function MainContentPage() {
   return (
     <div className='MainContentPageJs'>
-          <div className='MainContentPageJsTop'>
-                <input type="text" className='SearchBox' placeholder='Search' />
-          </div>
+          
           <div className='MainContentPageJsBottom'>
                 <div>
                   
