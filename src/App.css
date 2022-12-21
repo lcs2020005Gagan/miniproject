@@ -1272,3 +1272,13 @@ filter: brightness(60%);
 #app{
   height: 100%;
 }
+
+.ModalBody{
+  width:100%;
+  height: 100%;;
+}
+.RightSideModalDiv{
+  display: flex;
+  justify-content: space-around;
+  padding:1rem;
+}

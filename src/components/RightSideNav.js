@@ -3,6 +3,7 @@ import {BiSend} from 'react-icons/bi';
 import {IoMdNotificationsOutline} from 'react-icons/io';
 import {IoSettings} from 'react-icons/io5';
 import Avatar from '@mui/material/Avatar';
+import Modal from './Modal';
 
 
 function RightSideNav() {
@@ -22,6 +23,10 @@ function RightSideNav() {
         <div className="RightSideNavBottom">
         <div className='MainContentPageJsTop'>
                 <input type="text" className='SearchBox' placeholder='Search twitter' />
+          </div>
+          <div className='RightSideModalDiv'>
+
+          <Modal/>
           </div>
             <div className='Profile'>
                 <div className='ProfileImgDiv'>
