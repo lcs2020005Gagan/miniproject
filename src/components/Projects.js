@@ -56,9 +56,7 @@ function Projects() {
                     <Nav.Item>
                       <Nav.Link eventKey="first">Our Stories</Nav.Link>
                     </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Flagship Initiatives</Nav.Link>
-                    </Nav.Item>
+                    
                     <Nav.Item>
                       <Nav.Link eventKey="third">About Us</Nav.Link>
                     </Nav.Item>

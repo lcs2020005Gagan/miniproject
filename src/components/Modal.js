@@ -13,6 +13,7 @@ import {
 }
 from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
+import {FiLogIn} from 'react-icons/fi'
 
 function Modal() {
     
@@ -28,9 +29,9 @@ function Modal() {
 
   return (
     <div>
-<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-  Login
-</button>
+<div className='hoverEffects' data-bs-toggle="modal" data-bs-target="#exampleModal" style={{"display":"flex","borderRadius":"1rem","backgroundColor":"#5b5189","height":"100%","width":"3rem","padding":"0.3rem","justifyContent":"center","alignItems":"center","color":"white"}} >
+  <FiLogIn/>
+</div>
 
 <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
   <div className="modal-dialog modal-dialog-centered" style={{"width":"80rem"}}>

@@ -1,9 +1,10 @@
 import React from 'react'
 import profileBanner from "../assets/img/profileBanner.png";
 import { MdModeEditOutline } from 'react-icons/md';
+import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
-import Card from './Card2';
+import Card2 from './Card2';
 
 function Profile(toRender) {
     const {profileId} =useParams();
@@ -21,6 +22,7 @@ function Profile(toRender) {
                 <div className="ProfileJsProfileInfoBioTop">
                 <h5>Yeager</h5>
                 <MdModeEditOutline className='MdModeEditOutline'/>
+                <BsFillPersonPlusFill className='MdModeEditOutline'/>
                 </div>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet voluptatibus rem sequi temporibus quasi architecto mollitia laudantium at! Provident molestiae ad hic obcaecati maiores! Tempora eum pariatur sint omnis itaque.</p>
             </div>
@@ -47,9 +49,8 @@ function Profile(toRender) {
             </Link>
         </div>
         <div className='ProfileJsUnderTabs'>
-        {toRender.toRender==="followed"&&<div ProfileJsUnderTabsCon>
-            this is followed
-            <Card/>
+        {toRender.toRender==="followed"&&<div className='ProfileJsUnderTabsCon'>
+            <Card2/>
             </div>}
 
             {toRender.toRender==="history"&&<div>

@@ -23,6 +23,10 @@ import Organization from './components/Organization';
 import Profile from './components/Profile';
 import Stream from './components/Stream';
 import AudioControls from './components/AudioControls';
+import SpeechWave from './components/SpeechWave';
+import Foundations from './components/Foundations';
+import Streams from './components/Streams';
+import Stories from './components/Stories';
 
 function App() {
 
@@ -41,7 +45,7 @@ function App() {
         </div>
         <div className='LeftNavDivBottom'>
             <div className='SpeechWave'>
-                  SpeechWave
+                  <SpeechWave/>
             </div>
             <div className='AudioControls'>
                 <AudioControls/>
@@ -61,11 +65,14 @@ function App() {
       <Route exact path="/friend" element=<Friend/> />
       <Route exact path="/live-stream/:roomId" element=<LiveStream/> />
       <Route exact path="/live-streams" element=<LiveStreams/> />
-      <Route exact path="/organization" element=<Organization/> />
+      <Route exact path="/foundations" element=<Foundations/> />
+      <Route exact path="/foundation/:foundationId" element=<Organization/> />
       <Route exact path="/profile/:profileId" element=<Profile toRender={"followed"}/> />
       <Route exact path="/profile/:profileId/contributions" element=<Profile toRender={"contributions"}/> />
       <Route exact path="/profile/:profileId/liked" element=<Profile toRender={"liked"}/> />
-      <Route exact path="/stream" element=<Stream/> />
+      <Route exact path="/stream/:streamId" element=<Stream/> />
+      <Route exact path="/streams" element=<Streams/> />
+      <Route exact path="/stories" element=<Stories/> />
       
       {/* <Route exact path="/call" element=<VideoRoom/> /> */}
      
