@@ -21,7 +21,10 @@ function RightSideNav() {
     return (
 
         <div className='RightSideNavJs'>
-            <div className="RightSideNavTop">
+                <div className='MainContentPageJsTop' >
+                    <input type="text" className='SearchBox' placeholder='Search twitter' />
+                </div>
+            <div className="RightSideNavTop" style={{"marignTop":"3rem"}}>
               
                 <div className='RightSideNavTopIcon'>
                     <IoMdNotificationsOutline onClick={() => handleClick('notifications')} />
@@ -32,9 +35,6 @@ function RightSideNav() {
                 </div>
                     <Modal />
             </div>
-                <div className='MainContentPageJsTop'>
-                    <input type="text" className='SearchBox' placeholder='Search twitter' />
-                </div>
             {Mode===""&&<div className="RightSideNavBottom">
                 {/* <div className='RightSideModalDiv'>
 

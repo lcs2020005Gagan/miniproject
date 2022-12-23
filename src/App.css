@@ -280,6 +280,7 @@ filter: brightness(70%);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 1rem;
   /* border-bottom: 1px solid black; */
   /* columns: grey; */
 }
@@ -1430,6 +1431,7 @@ input:checked + .slider:before {
   transform: scale(1.03);
   cursor: pointer;
   color: white;
+  filter: brightness(120%);
 }
 .donate{
   font-size: 1.3rem;
@@ -1468,5 +1470,101 @@ input:checked + .slider:before {
   background-color: #060721;
   /* border-radius: 1rem; */
   color: white;
-  margin: 1rem;
+  margin-bottom: 0.5rem;
+}
+.Card3{
+  height: 16rem;
+  width: 100%;
+  display: flex;
+  border-radius: 1rem;
+}
+.Card3Img{
+  width: 45%;
+  height: 100%;
+  /* border-radius: 1rem; */
+  /* padding: 0.3rem; */
+}
+.Card3Img img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.Card3Info{
+  display: flex;
+  flex-direction: column;
+  color: grey;
+  padding: 0.3rem;
+  width: 55%;
+  height: 100%;
+  gap: 0.3rem;
+}
+.Card3Author{
+  display: flex;
+  gap: 0.3rem;
+  /* justify-content: center; */
+  align-items: center;
+}
+.Card3AuthorPic{
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+.Card3AuthorPic img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.Card3AuthorName{
+  font-size: 1rem;
+  font-weight: bold;
+  color:white ;
+}
+.Card3InfoTitle{
+  font-size: 1.3rem;
+  color: white;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.Card3InfoTags{
+display: flex;
+margin-top: 0.1rem;
+max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.Card3InfoDesc{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.Card3InfoFooter{
+  display: flex;
+  justify-content: space-between;
+  /* padding-left: 0.5rem; */
+  /* padding-right: 0.5rem; */
+  
+}
+.Card3InfoTags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+.Card3InfoDate{
+  font-size: 0.8rem;
+}
+.Card3InfoLike{
+  display: flex;
+  font-size: 0.8rem;
+  align-items: center;
+  gap: 0.4rem;
 }
