@@ -1,12 +1,13 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 
 function Card() {
     const logo = require('./svgg2.png');
 
 
         return (
-    <div className="carddd">
+            <Link to="/stream/123">
+    <div className="carddd hoverEffects2">
         <img src='https://img.freepik.com/premium-photo/top-view-gaming-gear_160097-847.jpg?w=2000' alt=''/>
         <div className='cardddimg'>
             <img src={logo} className='img123' />
@@ -27,6 +28,7 @@ function Card() {
         </div>
 
     </div>
+    </Link>
   )
 }
 
