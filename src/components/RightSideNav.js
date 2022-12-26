@@ -21,20 +21,7 @@ function RightSideNav() {
     return (
 
         <div className='RightSideNavJs'>
-                <div className='MainContentPageJsTop' >
-                    <input type="text" className='SearchBox' placeholder='Search twitter' />
-                </div>
-            <div className="RightSideNavTop" style={{"marignTop":"3rem"}}>
-              
-                <div className='RightSideNavTopIcon'>
-                    <IoMdNotificationsOutline onClick={() => handleClick('notifications')} />
-
-                </div>
-                <div className='RightSideNavTopIcon'>
-                    <IoSettings onClick={() => handleClick('settings')}/>
-                </div>
-                    <Modal />
-            </div>
+             
             {Mode===""&&<div className="RightSideNavBottom">
                 {/* <div className='RightSideModalDiv'>
 
@@ -143,44 +130,7 @@ function RightSideNav() {
                 </div>
 
             </div>}
-            {
-                Mode==="notifications"&&<div className="RightSideNavBottom Notifs">
-                    
-                    <div className='NotifsTop'>
-                        <div className='Notifsclose'>
-
-                        <AiOutlineClose className=' hoverEffects' onClick={() => handleClickNull()}/>
-                        </div>
-                        <div style={{"textAlign":"center","display":"flex","justifyContent":"center"}}>
-
-                        <h5>
-                            Notifications
-                        </h5>
-                        </div>
-                    </div>
-                    <Notification/>
-                </div>
-            }
-
-            {
-                Mode==="settings"&&<div className="RightSideNavBottom Notifs">
-                    
-                    <div className='NotifsTop'>
-                        <div className='Notifsclose'>
-
-                        <AiOutlineClose className=' hoverEffects' onClick={() => handleClickNull()}/>
-                        </div>
-                        <div style={{"textAlign":"center","display":"flex","justifyContent":"center"}}>
-
-                        <h5>
-                            Settings
-                        </h5>
-                        </div>
-                        <Setting/>
-                    </div>
-                    
-                </div>
-            }
+            
         </div>
     )
 }

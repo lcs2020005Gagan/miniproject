@@ -7,7 +7,7 @@ function Card() {
 
         return (
             <Link to="/stream/123">
-    <div className="carddd hoverEffects2">
+    <div className="carddd">
         <img src='https://img.freepik.com/premium-photo/top-view-gaming-gear_160097-847.jpg?w=2000' alt=''/>
         <div className='cardddimg'>
             <img src={logo} className='img123' />

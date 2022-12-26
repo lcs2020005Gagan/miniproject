@@ -56,7 +56,7 @@
   /* max-width: 15vw; */
   /* background-image:linear-gradient(#2c2e43,#8672af) ; */
     overflow-y: auto;
-
+  
   /* backdrop-filter:blur(200px); */
   /* background-image: url("https://i.pinimg.com/originals/57/ac/d6/57acd67bff5f4a43ecad3d5786317f11.gif"); */
 }
@@ -120,6 +120,8 @@ filter: brightness(70%);
   width: 60vw;
     overflow-y: auto;
     overflow-x: hidden;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
 
 }
 .RightSideNav
@@ -137,10 +139,11 @@ filter: brightness(70%);
     #2b2b38,
     grey
   ) 1 100%;;  min-height: 100vh; */
-  border-left:1px solid grey;
+  /* border-left:1px solid grey; */
   height: 100vh;
   width: 20vw;
   overflow: auto;
+  flex-direction: column;
   /* text-align: center; */
 }
 
@@ -149,11 +152,14 @@ filter: brightness(70%);
   align-items: center;
   justify-content: flex-start;
   padding:1rem;
-  min-height: 10vh;
-  max-height: 10vh;
+  /* min-height: 10vh; */
+  /* max-height: 10vh; */
   color:white;
   font-weight: bold;
+  overflow-x: hidden;
   font-size: 1.6rem;
+  /* margin-left: 0.7rem; */
+  /* border-bottom: 1px solid grey; */
 }
 .LeftSideNavBottom{
   padding:0.5rem;
@@ -198,11 +204,11 @@ filter: brightness(70%);
   /* background-image:linear-gradient(to right,black,#8672af) ; */
   background-color: black;
  text-decoration: none; 
-  border-radius:1rem;
+  border-radius:0.7rem;
   color:white;
   cursor:pointer;
   opacity: 0.7;
-
+  /* border: 1px solid grey; */
 
 }
 .para{
@@ -628,8 +634,7 @@ min-width: 100%;
   overflow: hidden;
   color:white;
   position: relative;
-  /* filter: contrast(120%); */
-  border-radius: 1.3rem;
+border:1px solid grey;  border-radius: 1.3rem;
   filter: brightness(75%);
   transition-duration: 0.2s;
    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
@@ -1471,6 +1476,7 @@ input:checked + .slider:before {
   /* border-radius: 1rem; */
   color: white;
   margin-bottom: 0.5rem;
+  border: 1px solid grey;
 }
 .Card3{
   height: 16rem;
@@ -1567,4 +1573,227 @@ max-width: 100%;
   font-size: 0.8rem;
   align-items: center;
   gap: 0.4rem;
+}
+.ProfileJsTabsLi{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.6s;
+  /* background-color: #060721; */
+}
+.StoryJs{
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+.StoryJsAuthor{
+  height: 6rem;
+  display: flex;
+  padding: 0.4rem;
+  z-index: 1;
+}
+.StoryJsAuthorPic{
+  height: 4rem;
+  width: 4rem ;
+  z-index: 1;
+  /* filter: blur(30px); */
+  border-radius: 50%;
+}
+.StoryJsAuthorPic img{
+  height: 4rem;
+  z-index: 1;
+  width: 4rem;
+  border-radius: 50%;
+}
+.StoryJsInfo{
+  width: 100%;
+  filter: brightness(110%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0.5rem;
+  z-index: 1;
+}
+.StoryJsAuthorName{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  z-index: 1;
+  /* align-items: center; */
+  /* margin-bottom: auto; */
+  font-size: 2rem;
+  color: white;
+}
+.StoryJsInfoList{
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: auto;
+}
+.StoryJsInfoListLeft{
+  display: flex;
+  z-index: 1;
+  gap: 1rem;
+  align-items: center;
+}
+
+.StoryJsContentImg{
+  box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+  height: 20rem;
+  width: 100%;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+  z-index:0;
+  border-radius: 1rem;
+  filter: brightness(70%);
+}
+.StoryJsContentImg img{
+  box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+  height: 20rem;
+  width: 100%;
+  border-radius: 1rem;
+  z-index: 0;
+ }
+.StoryJsContentpara{
+  color: grey;
+  /* padding: 1rem; */
+}
+.StoryRightSideNav{
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  color: white;
+  gap: 0.5rem;
+}
+.StoryRightSideNavAbout{
+  font-size: 1.3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+.StoryRightSideNavAboutPicAuthor{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-top: 0.5rem;
+
+}
+.StoryRightSideNavAboutName{
+  display: flex;
+  flex-direction: column;
+}
+.StoryRightSideNavAboutFooter{
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 1rem;
+  font-size: 1rem;
+}
+.StoryRightSideNavAboutPic{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.StoryRightSideNavAboutPic img{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.StoryRightSideNavAboutContent{
+  font-size: 0.8rem;
+  width: 100%;
+  padding-top: 0.5rem;
+}
+.ImageDiv{
+  width: 4rem;
+  height: 4.6rem;
+  border-radius: 0.6rem;
+}
+.ImageDiv img{
+  width: 4rem;
+  height: 4.6rem;
+  border-radius: 0.6rem;
+}
+.RightSideCardJs{
+  display: flex;
+  flex-direction: row;
+  gap: 0.3rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  margin-bottom: 0.3rem;
+  background-color: #383b5a;
+  /* border: 1px solid grey; */
+}
+.RightSideCardJsInfo{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: white;
+}
+.RightSideCardJsTitle{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.RightSideCardJsDesc{
+color: grey;
+font-size: 0.7rem;
+max-width: 100%;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+overflow: hidden;
+} 
+.RightSideCardJsFooter{
+  font-size: 0.6rem;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.RightSideContent{
+  font-size: 1.3rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+  padding:0.5rem;
+}
+.RightSideCard2Js{
+  display: flex;
+  gap: 0.3rem;
+  font-size: 1rem;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.RightSideCard2JsImg{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.RightSideCard2JsImg img{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.RightSideCard2JsDet{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

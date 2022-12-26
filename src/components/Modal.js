@@ -89,7 +89,7 @@ function Modal() {
                             <a href="!#">Forgot password?</a>
                             </div>
 
-                            <MDBBtn className="mb-4 w-100" data-dismiss="modal">Sign in</MDBBtn>
+                            <MDBBtn className="mb-4 w-100" data-dismiss="Modal" onClick={()=>window.location.reload()}>Sign in</MDBBtn>
                             <p className="text-center">Not a member? <a href="#!">Register</a></p>
 
                         </MDBTabsPane>
@@ -129,7 +129,7 @@ function Modal() {
                             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' required/>
                             </div>
                             
-                            <MDBBtn className="mb-4 w-100" data-dismiss="modal">Sign up</MDBBtn>
+                            <MDBBtn className="mb-4 w-100" data-dismiss="Modal" onClick={()=>window.location.reload()}>Sign up</MDBBtn>
 
                         </MDBTabsPane>
 

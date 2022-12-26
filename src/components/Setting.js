@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Switch from '@mui/material/Switch';
 import FormControlLabel from '@material-ui/core/formcontrollabel'
 import { InputLabel } from '@mui/material';
+import Alert from './Alert';
 
 
 function Setting() {
@@ -9,6 +10,7 @@ function Setting() {
     
   return (
     <div className='SettingJs'>
+      <Alert message="Your profile was updated successfully" color="success"/>
         <h4>
             Account
         </h4>

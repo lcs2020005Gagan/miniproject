@@ -11,7 +11,7 @@ import { IoIosPeople } from 'react-icons/io';
 import { AiFillInfoCircle } from 'react-icons/ai';
 import { GiCastle } from 'react-icons/gi';
 import { Link, useParams ,useLocation} from 'react-router-dom';
-
+import tgh from "./tgh5.png"
 
 function LeftSideNav() {
    
@@ -22,7 +22,7 @@ function LeftSideNav() {
   return (
     <div>
         <div className='LeftSideNavTop'>
-            Explore
+            <img src={tgh} alt="" style={{"height":"6rem","width":"20rem"}}/>
         </div>
         <div className='LeftSideNavBottom'>
         <ul className='LeftSideNavList'>
