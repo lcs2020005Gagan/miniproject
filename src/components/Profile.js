@@ -63,7 +63,12 @@ function Profile(toRender) {
         </div>
         <div className='ProfileJsUnderTabs'>
         {toRender.toRender==="subscriptions"&&<div className='ProfileJsUnderTabsCon'>
-            <Card2/>
+        <Card2/>
+        <Card2/>
+        <Card2/>
+        <Card2/>
+        <Card2/>
+        <Card2/>
             </div>}
 
             {toRender.toRender==="contributions"&&<div className='ProfileJsUnderTabsCon'>
