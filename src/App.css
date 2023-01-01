@@ -1,10 +1,15 @@
+html{
+  scroll-behavior: smooth;
+}
 ::-webkit-scrollbar {
   display: none;
 }
 *{
   font-family: 'Nunito', sans-serif;
+  scroll-behavior: smooth;
   
 }
+
 .Container{
   display: flex;
   background-color: red;
@@ -144,6 +149,7 @@ filter: brightness(70%);
   width: 20vw;
   overflow: auto;
   flex-direction: column;
+  
   /* text-align: center; */
 }
 
@@ -204,7 +210,6 @@ filter: brightness(70%);
   /* background-image:linear-gradient(to right,black,#8672af) ; */
   background-color: black;
  text-decoration: none; 
-  border-radius:0.7rem;
   color:white;
   cursor:pointer;
   opacity: 0.7;
@@ -313,9 +318,7 @@ filter: brightness(70%);
  #profilePic:hover{
   cursor: pointer ;
   /* border: 1rem solid #7498bf; */
-  transform: scale(1.02);  
 box-shadow: 10px 10px 10px 10px #7498bf;
-  opacity: 0.7;
  }
  #profilePic{
   transition-duration: 0.6s;
@@ -334,7 +337,7 @@ box-shadow: 10px 10px 10px 10px #7498bf;
 
  }
 .ProfileImgDiv{
-  margin-top: 2rem;;
+  margin-top: 0.5rem;;
   text-align: center;
   color: white;
   font-size: larger;
@@ -421,7 +424,12 @@ min-width: 100%;
   outline: none;
 }
 .MainContentPageJsBottom{
+  height:100%;
   width: 100%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 .Charity{
   width: 100%;
@@ -1280,9 +1288,11 @@ z-index: 1;
   color:rgb(164, 159, 243);
   font-size: 1.2rem;
 
+
 }
 .Card2:hover .Card2InfoLearn {
   display: flex;
+  justify-content: space-between;
 }
 .Card2:hover .Card2InfoTitle{
   display: none;
@@ -1542,12 +1552,11 @@ input:checked + .slider:before {
 }
 .Card3InfoTags{
 display: flex;
+flex-direction: row;
+overflow-x: scroll;
 margin-top: 0.1rem;
-max-width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+width: 100%;
+height:2rem;
 }
 .Card3InfoDesc{
   max-width: 100%;
@@ -1799,4 +1808,637 @@ overflow: hidden;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+.ToolTipJs{
+ padding: 0.5rem;
+ background-color: #1e1f3b;
+ margin: -0.9rem;
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ /* filter: brightness(130%); */
+}
+.ToolTipImg{
+  display: flex;
+  gap: 0.5rem;
+  
+}
+.ToolTipAuth{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 0.5rem;
+  align-items: center;
+}
+.ToolTipImg img{
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+.ToolTipName{
+  font-size: 2rem;
+  height: 100%;
+  width: 100%;
+}
+.ToolTipAbout{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+.ToolTipFooter{
+  font-size: 0.6rem;
+}
+.carousel-item img{
+  width: 100%;
+  height: 25rem;
+  filter: brightness(70%);
+  box-shadow: inset 0 0 100px black;
+}
+.carousel-item{
+  box-shadow: inset 0 0 100px black;
+  /* box-shadow: 0 0 200px rgba(0,0,0,0.9) inset; */
+}
+.carousel-indicators button{
+  background-color: purple;
+}
+.carousel-inner{
+  box-shadow: inset 0 0 100px black;
+  border-left-bottom-radius: 1rem;
+  border-right-bottom-radius: 1rem;
+
+}
+.RecentlyUpdatedJsBottom{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 400px;
+  overflow-x: auto;
+  gap: 0.7rem;
+}
+.RecentlyUpdatedJs{
+  display: flex;
+  flex-direction: column;
+  color: white;
+  gap: 0.5rem;
+}
+/* card 4 css */
+:root {
+  --surface-color: #fff;
+  --curve: 40;
+}
+
+
+
+
+.card4 {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+  height: 400px;
+  width: 300px;
+}
+
+.card4__image {      
+  width: 100%;
+  height: auto;
+}
+
+.card4__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card4:hover .card4__overlay {
+  transform: translateY(0);
+}
+
+.card4__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+  
+}
+
+.card4__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card4__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card4:hover .card4__header {
+  transform: translateY(0);
+}
+
+.card4__thumb {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 4rem;      
+  border-radius: 50%;      
+}
+
+.card4__title {
+  font-size: 1rem;
+  margin: 0 0 .3em;
+  color: #6A515E;
+}
+
+.card4__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "MockFlowFont";  
+  font-size: .8em; 
+  color: #D7BDCA;  
+}
+
+.card4__status {
+  font-size: .8em;
+  color: #D7BDCA;
+}
+
+.card4__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #D7BDCA;
+  font-family: "MockFlowFont";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}    
+
+*{
+  font-family: 'Nunito', sans-serif;
+  
+}
+
+/* card6 css */
+.profile-card-2 {
+  width: 300px;
+  height: 400px;
+  background-color: #FFF;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+.profile-card-2 img {
+  transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-name {
+  position: absolute;
+  left: 30px;
+  bottom: 100px;
+  font-size: 30px;
+  color: #FFF;
+  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-icons {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  color: #FFF;
+  transition: all linear 0.25s;
+}
+
+.profile-card-2 .profile-username {
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+  color: #FFF;
+  font-size: 13px;
+  transition: all linear 0.25s;
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.profile-card-2 .profile-icons .fa {
+  margin: 3px;
+}
+
+.profile-card-2:hover img {
+  filter: grayscale(100%);
+}
+
+.profile-card-2:hover .profile-name {
+  bottom: 110px;
+}
+
+.profile-card-2:hover .profile-username {
+  bottom: 40px;
+}
+
+.profile-card-2:hover .profile-icons {
+  right: 40px;
+  bottom: 0px;
+}
+/* timeline css */
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2 {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: #26c6da;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-2 {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-2::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: #26c6da;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left-2 {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right-2 {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-2::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-2::after {
+  left: -14px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline-2::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-2 {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-2::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left-2::after,
+  .right-2::after {
+    left: 18px;
+  }
+
+  .left-2::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right-2 {
+    left: 0%;
+  }
+}
+.clipText{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+}
+.textClip-3{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+}
+.textClip-2{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+}
+.textClip-4{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+}
+.textClip-1{
+  max-width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden; 
+}
+.Card8{
+  height: 450px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  /* background-color: #060721; */
+  background-image: linear-gradient(#340230,#060721);
+}
+.Card8Header{
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem;
+  
+}
+.Card8Profile{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.Card8Profile img{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.Card8HeaderContent{
+  display: flex;
+  flex-direction: column;
+}
+.Card8Name{
+  font-size: 1rem;
+  color: white;
+}
+.Card8Date{
+  font-size: 0.7rem;
+  color: grey;
+}
+.Card8Content img{
+height: 13rem;
+width: 100%;
+}
+.Card8Title{
+  font-size: 1.3rem;
+  color: white;
+  padding: 0.2rem;
+
+}
+.Card8Desc{
+  font-size: 0.9rem;
+  padding: 0.2rem;
+
+}
+.Card8Footer{
+  font-size: 1.1rem;
+  display: flex;
+  gap: 1rem;
+  color: white;
+  padding: 0.8rem;
+
+  /* justify-content: center; */
+
+}
+
+/* carousel2 css */
+.conbg {
+  width: 100%;
+  height: 500px;
+}
+.bg2 {
+  z-index: 2;
+  position: relative;
+  width: 90%;
+  margin: 4rem auto;
+  transform: rotate(10deg);
+  background-image: url(https://scontent.fblr2-2.fna.fbcdn.net/v/t1.6435-9/51890271_2298627836816179_7514224874114514944_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_ohc=ctOrcU6nhSIAX_FJu_Y&_nc_ht=scontent.fblr2-2.fna&oh=00_AfDs31Om9L2KwftCkKQlEaaqXEqCsiEaB1l0rpg5szCZxg&oe=63D52D2F);
+  background-size: cover;
+  background-position: center;
+  background-color: lightslategray;
+  box-shadow: 5px 5px 3px rgb(0 0 0 / 50%);
+}
+.bg1 {
+  z-index: 3;
+  position: relative;
+  margin: auto;
+  width: 105%;
+  transform: rotate(-5deg);
+  background-image: url(https://www.feedingamerica.org/sites/default/files/styles/max_2600x2600/public/2020-05/Mass%20Distrib%201360X450.jpg?itok=05WVE6Jc);
+  background-size: cover;
+  background-position: center;
+  background-color: lightslategray;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.bg {
+  z-index: 4;
+  position: relative;
+  margin: auto;
+  transform: rotate(-5deg);
+  height: 500px;
+  background-image: url(https://www.alhudatrust.in/data1/images/08.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: lightslategray;
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.bg-text {
+  width: 100%;
+  position: absolute;
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+}
+.bg-text a {
+  margin: 5px;
+  float: right;
+}
+
+#bg1:target .bg {
+  animation: ciut 1s forwards;
+}
+#bg1:target {
+  animation: fre 0.3s forwards;
+}
+#bg2:target .bg1 {
+  animation: ciut 1s forwards;
+}
+#bg2:target {
+  animation: fre1 0.3s forwards;
+}
+#conbg:target .bg2 {
+  animation: ciut1 1s;
+}
+@keyframes fre1 {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fre {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes ciut {
+  0% {
+    opacity: 1;
+    transform: rotate(-5deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(0);
+  }
+}
+@keyframes ciut1 {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(370deg) scale(1);
+  }
+}
+.RightSideNavBut{
+  display: flex;
+  text-align: center;
+  width: 100%;
+  border-radius: 1rem;
+  padding: 0.6rem;
+  background-color: rgb(0, 4, 33);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid grey;
+}
+/* tags post story css */
+.tags-input-container{
+  padding: .5em;
+  border-radius: 3px;
+  width: min(80vw, 600px);
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .5em;
+  border: 1px solid black;
+  outline: none;
+  width: 100%;
+}
+
+.tag-item{
+  background-color: rgb(218, 216, 216);
+  display: inline-block;
+  padding: .5em .75em;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.tag-item .close{
+  height: 20px;
+  width: 20px;
+  background-color: rgb(48, 48, 48);
+  color: #fff;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: .5em;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.tags-input{
+  flex-grow: 1;
+  padding: .5em 0;
+  border: none;
+  outline: none;
 }

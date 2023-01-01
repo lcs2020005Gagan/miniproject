@@ -34,7 +34,7 @@ function Profile(toRender) {
                 Joined on 5th November
             </div>
         </div>
-        <div className='ProfileJsTabs'>
+        <div className='ProfileJsTabs' style={{"backgroundColor":"#1e1f3b"}}>
             <div className={`${toRender.toRender==="subscriptions"?"UlListActive":""} ProfileJsTabsLi`}>
 
             <Link to={`/profile/${profileId}`} style={{"textDecoration":"none"}}>

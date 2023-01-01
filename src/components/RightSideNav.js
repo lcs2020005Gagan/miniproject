@@ -8,6 +8,8 @@ import Modal from './Modal';
 import Notification from './Notification';
 import Setting from './Setting';
 import { Link } from 'react-router-dom';
+import ToolTip from './ToolTip';
+import SeeAll from './SeeAll';
 
 
 function RightSideNav() {
@@ -21,8 +23,8 @@ function RightSideNav() {
     return (
 
         <div className='RightSideNavJs'>
-             
-            {Mode===""&&<div className="RightSideNavBottom">
+
+            {Mode === "" && <div className="RightSideNavBottom">
                 {/* <div className='RightSideModalDiv'>
 
                     <Modal />
@@ -37,9 +39,9 @@ function RightSideNav() {
                             </defs>
                             <Link to="/profile/123">
 
-                                <polygon id="profilePic" points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)" />
+                                <polygon id="profilePic" className='hoverEffects' points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)" />
                             </Link>
-                            
+
 
                         </svg>
                     </div>
@@ -49,7 +51,6 @@ function RightSideNav() {
                 <div className='NewMembers'>
                     <div className='NewMembersTop'>
                         <p>New Members</p>
-                        <p id="NewMembersTopSeeAll">See All</p>
                     </div>
                     <div className='NewMembersBottom'>
                         <div className='NewMemberCard'>
@@ -83,7 +84,7 @@ function RightSideNav() {
 
                         </div>
                     </div>
-
+                    <SeeAll/>
                 </div>
 
 
@@ -92,7 +93,6 @@ function RightSideNav() {
                 <div className='NewMembers'>
                     <div className='NewMembersTop'>
                         <p>Recent Activity</p>
-                        <p id="NewMembersTopSeeAll">See All</p>
                     </div>
                     <div className='NewMembersBottom'>
                         <div className='NewMemberCard'>
@@ -127,10 +127,11 @@ function RightSideNav() {
                         </div>
                     </div>
 
+<SeeAll/>
                 </div>
 
             </div>}
-            
+
         </div>
     )
 }

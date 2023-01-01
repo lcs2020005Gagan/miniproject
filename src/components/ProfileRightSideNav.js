@@ -11,6 +11,7 @@ function ProfileRightSideNav() {
          <RightSideCard2 img="https://st.depositphotos.com/1662850/1853/i/450/depositphotos_18538933-stock-photo-spectacular-view-to-the-mountains.jpg" name="John"/>
          <RightSideCard2 img="https://st.depositphotos.com/1662850/1853/i/450/depositphotos_18538933-stock-photo-spectacular-view-to-the-mountains.jpg" name="John"/>
          <RightSideCard2 img="https://st.depositphotos.com/1662850/1853/i/450/depositphotos_18538933-stock-photo-spectacular-view-to-the-mountains.jpg" name="John"/>
+         
         </div>
 
       

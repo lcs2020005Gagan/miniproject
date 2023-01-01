@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { FaRegThumbsUp, FaRegThumbsDown, FaThumbsDown, FaThumbsUp } from 'react-icons/fa'
 import NoContent from "./NoContent";
+import Modal2 from './Modal2'
+import Chip from '@material-ui/core/chip'
+
 function Story() {
 
     const [likes, setlikes] = useState(23)
@@ -39,6 +42,7 @@ function Story() {
                 <div className="StoryJsAuthorPic">
                     <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
                 </div>
+             
                 <div className="StoryJsInfo">
                     <div className="StoryJsAuthorName">
                         Mark
@@ -51,6 +55,9 @@ function Story() {
                         </div>
                         <div className="StoryJsMinsRead">
                             10 mins read
+                        </div>
+                        <div className="share">
+                            <Modal2/>
                         </div>
                         </div>
                         <div className="Card3InfoLike" style={{"alignItems":"center","fontSize":"0.8rem","display":"flex","marginBottom":"auto"}}>
@@ -73,6 +80,12 @@ function Story() {
                 <div className="StoryJsContentImg">
                     <img src="https://drscdn.500px.org/photo/143495567/m%3D900/ac580b90976ce1a4da085b52e91dbf71" alt="" />
                 </div>
+                <div className="Card3InfoTags" style={{"color":"grey"}}>
+        Tags:
+        <Chip label="Chip Outlined" variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>
+        <Chip label="Chip Outlined" variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>
+        <Chip label="Chip Outlined" variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>
+        </div>
                 <div className="StoryJsContentTitle" style={{"fontSize":"2rem","color":"white"}}>
                     This is the title
                 </div>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Card2 from './Card2'
+import ToolTip from './ToolTip'
 function Foundations() {
   return (
     <div className='FoundationsJs'>

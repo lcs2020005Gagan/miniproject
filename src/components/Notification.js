@@ -1,13 +1,14 @@
 import React from 'react'
 import Avatar from '@mui/material/Avatar';
-
+import Modal2 from './Modal2';
+import {TiTick} from 'react-icons/ti'
 
 function Notification() {
     return (
         <div className='NotificationJs'>
             {/* display all notifications here */}
-            <h3>
-                Mark all as read
+            <h3 data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                Mark all as read <TiTick/>
             </h3>
             <div className='NewMemberCard'>
                 <div className='NewMemberCardProfile'>

@@ -15,6 +15,7 @@ import { IoSettings } from 'react-icons/io5';
 import { AiOutlineClose } from 'react-icons/ai';
 import Avatar from '@mui/material/Avatar';
 import Modal from './components/Modal';
+import Modal2 from './components/Modal2';
 import Setting from './components/Setting';
 import LeftSideNav from './components/LeftSideNav';
 import MainContentPage from './components/MainContentPage';
@@ -40,6 +41,8 @@ import FoundationsRightSideNav from './components/FoundationsRightSideNav';
 import StoriesRightSideNav from './components/StoriesRightSideNav';
 import StreamsRightSideNav from './components/StreamsRightSideNav';
 import ProfileRightSideNav from './components/ProfileRightSideNav';
+import ToolTip from './components/ToolTip';
+import Footer from './components/Footer';
 
 function App() {
   const [Mode, setMode] = useState("");
@@ -49,6 +52,8 @@ function App() {
   const handleClickNull = () => {
     setMode("");
   }
+ 
+ 
 
   return (
     <BrowserRouter>
@@ -74,13 +79,13 @@ function App() {
 
         </div>
 
-        <div className='MainContent'>
+        <div className='MainContent' style={{"display":"flex","flexDirection":"column"}}>
           {/* <div className="App">
       <h1>WDJ Virtual Call</h1>
 
       
     </div> */}
-          <Routes>
+<Routes>
             <Route exact path="/" element=<MainContentPage /> />
             <Route exact path="/friend" element=<Friend /> />
             <Route exact path="/live-stream/:roomId" element=<LiveStream /> />
@@ -98,11 +103,10 @@ function App() {
             {/* <Route exact path="/call" element=<VideoRoom/> /> */}
 
           </Routes>
-
         </div>
 
         <div className='RightSideNav' >
-        
+
 
           <div className='MainContentPageJsTop' >
             <input type="text" className='SearchBox' placeholder='Search twitter' />
@@ -119,58 +123,58 @@ function App() {
             <Modal />
           </div>
           {
-                Mode==="notifications"&&<div className="RightSideNavBottom Notifs">
-                    
-                    <div className='NotifsTop'>
-                        <div className='Notifsclose'>
+            Mode === "notifications" && <div className="RightSideNavBottom Notifs">
 
-                        <AiOutlineClose className=' hoverEffects' onClick={() => handleClickNull()}/>
-                        </div>
-                        <div style={{"textAlign":"center","display":"flex","justifyContent":"center"}}>
+              <div className='NotifsTop'>
+                <div className='Notifsclose'>
 
-                        <h5>
-                            Notifications
-                        </h5>
-                        </div>
-                    </div>
-                    <Notification/>
+                  <AiOutlineClose className=' hoverEffects' onClick={() => handleClickNull()} />
                 </div>
-            }
+                <div style={{ "textAlign": "center", "display": "flex", "justifyContent": "center" }}>
 
-            {
-                Mode==="settings"&&<div className="RightSideNavBottom Notifs">
-                    
-                    <div className='NotifsTop'>
-                        <div className='Notifsclose'>
-
-                        <AiOutlineClose className=' hoverEffects' onClick={() => handleClickNull()}/>
-                        </div>
-                        <div style={{"textAlign":"center","display":"flex","justifyContent":"center"}}>
-
-                        <h5>
-                            Settings
-                        </h5>
-                        </div>
-                        <Setting/>
-                    </div>
-                    
+                  <h5>
+                    Notifications
+                  </h5>
                 </div>
-            }
+              </div>
+              <Notification />
+            </div>
+          }
 
           {
-            
-            Mode===""&&
-          <div className="RightSideRoute">
-            <Routes>
-          <Route exact path="/" element=<RightSideNav /> />
-          <Route exact path="/story/:storyId" element=<StoryRightSideNav /> />
-          <Route exact path="/foundations" element=<FoundationsRightSideNav/> />
-          <Route exact path="/stories" element=<StoriesRightSideNav/> />
-          <Route exact path="/streams" element=<StreamsRightSideNav/> />
-          <Route exact path="/profile/:profileId" element=<ProfileRightSideNav/> />
-          <Route exact path="/profile/:profileId/:x" element=<ProfileRightSideNav/> />
-          </Routes>
-          </div>
+            Mode === "settings" && <div className="RightSideNavBottom Notifs">
+
+              <div className='NotifsTop'>
+                <div className='Notifsclose'>
+
+                  <AiOutlineClose className=' hoverEffects' onClick={() => handleClickNull()} />
+                </div>
+                <div style={{ "textAlign": "center", "display": "flex", "justifyContent": "center" }}>
+
+                  <h5>
+                    Settings
+                  </h5>
+                </div>
+                <Setting />
+              </div>
+
+            </div>
+          }
+
+          {
+
+            Mode === "" &&
+            <div className="RightSideRoute">
+              <Routes>
+                <Route exact path="/" element=<RightSideNav /> />
+                <Route exact path="/story/:storyId" element=<StoryRightSideNav /> />
+                <Route exact path="/foundations" element=<FoundationsRightSideNav /> />
+                <Route exact path="/stories" element=<StoriesRightSideNav /> />
+                <Route exact path="/streams" element=<StreamsRightSideNav /> />
+                <Route exact path="/profile/:profileId" element=<ProfileRightSideNav /> />
+                <Route exact path="/profile/:profileId/:x" element=<ProfileRightSideNav /> />
+              </Routes>
+            </div>
           }
 
 
