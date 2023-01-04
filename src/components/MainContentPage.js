@@ -18,7 +18,7 @@ import Carousel2 from './Carousel2';
 import Footer from './Footer';
 import { DiscussionEmbed } from 'disqus-react';
 import BottomNavbar from './BottomNavbar';
-
+import Modall from './Modall'
 
 function MainContentPage() {
    
@@ -26,7 +26,6 @@ function MainContentPage() {
   
   return (
     <div className='MainContentPageJs'>
-
           <div className="MainCarousel" style={{"marginBottom":"3rem","backgroundImage":"url(https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/banner-bg.png)"}}>
             <Carousel2/>
           </div>

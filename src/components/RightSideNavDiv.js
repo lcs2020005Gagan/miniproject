@@ -12,7 +12,7 @@ import { IoMdNotificationsOutline } from 'react-icons/io';
 import { IoSettings } from 'react-icons/io5';
 import { AiOutlineClose } from 'react-icons/ai';
 import Avatar from '@mui/material/Avatar';
-import Modal from './Modal';
+import Modall from './Modall';
 import Modal2 from './Modal2';
 import Setting from './Setting';
 import LeftSideNav from './LeftSideNav';
@@ -62,7 +62,7 @@ function RightSideNavDiv() {
   <div className='RightSideNavTopIcon'>
     <IoSettings onClick={() => handleClick('settings')} />
   </div>
-  {/* <Modal /> */}
+  <Modall />
 </div>
 {
   Mode === "notifications" && <div className="RightSideNavBottom Notifs">
