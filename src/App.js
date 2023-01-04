@@ -43,7 +43,8 @@ import StreamsRightSideNav from './components/StreamsRightSideNav';
 import ProfileRightSideNav from './components/ProfileRightSideNav';
 import ToolTip from './components/ToolTip';
 import Footer from './components/Footer';
-
+import LeftNavDiv from './components/LeftNavDiv';
+import BottomNavbar from './components/BottomNavbar'
 function App() {
   const [Mode, setMode] = useState("");
   const handleClick = (lmao) => {
@@ -59,25 +60,7 @@ function App() {
     <BrowserRouter>
 
       <div className="Container">
-        <div className='LeftNavDiv'>
-          <div className='LeftNavDivTop'>
-            <div className='SideIcons'>
-              <SideIconsJs />
-            </div>
-            <div className='LeftSideNav'>
-              <LeftSideNav />
-            </div>
-          </div>
-          <div className='LeftNavDivBottom'>
-            <div className='SpeechWave'>
-              <SpeechWave />
-            </div>
-            <div className='AudioControls'>
-              <AudioControls />
-            </div>
-          </div>
-
-        </div>
+        <LeftNavDiv/>
 
         <div className='MainContent' style={{"display":"flex","flexDirection":"column"}}>
           {/* <div className="App">
@@ -85,6 +68,8 @@ function App() {
 
       
     </div> */}
+                <BottomNavbar/>
+
 <Routes>
             <Route exact path="/" element=<MainContentPage /> />
             <Route exact path="/friend" element=<Friend /> />

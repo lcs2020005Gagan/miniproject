@@ -16,6 +16,8 @@ import Card9 from './Card9';
 import RecommendedForYou from './RecommendedForYou';
 import Carousel2 from './Carousel2';
 import Footer from './Footer';
+import { DiscussionEmbed } from 'disqus-react';
+import BottomNavbar from './BottomNavbar';
 
 
 function MainContentPage() {
@@ -29,13 +31,13 @@ function MainContentPage() {
             <Carousel2/>
           </div>
           <div className='MainContentPageJsBottom'>
+     
            <WhatsHappening/>
            <RecommendedForYou/>
             <WhoToFollow/>
             <RecentlyUpdated/>
             <TimeLine/>
             <Footer/>
-
           </div>
           {/* <Card5/> */}
     </div>
@@ -43,4 +45,6 @@ function MainContentPage() {
 }
 
 export default MainContentPage
+
+
 
