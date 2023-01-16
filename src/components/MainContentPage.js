@@ -23,14 +23,19 @@ import Modall from './Modall'
 function MainContentPage() {
    
 
+  const handleTop=()=>{
+    const scrollDemo = document.querySelector(".MainContent");
+  
+    scrollDemo.scrollTop=0;
+  
+      }
   
   return (
     <div className='MainContentPageJs'>
-          <div className="MainCarousel" style={{"marginBottom":"3rem","backgroundImage":"url(https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/banner-bg.png)"}}>
+          {/* <div className="MainCarousel" style={{"marginBottom":"3rem","backgroundImage":"url(https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/banner-bg.png)"}}>
             <Carousel2/>
-          </div>
+          </div> */}
           <div className='MainContentPageJsBottom'>
-     
            <WhatsHappening/>
            <RecommendedForYou/>
             <WhoToFollow/>

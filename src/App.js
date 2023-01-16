@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import { useEffect, useState,useRef } from 'react';
 import './App.css';
 import {
   createBrowserRouter,
@@ -8,9 +8,12 @@ import {
   Link,
   BrowserRouter,
   Routes,
+  useLocation,
 } from "react-router-dom";
+
 import { BiSend } from 'react-icons/bi';
 import { IoMdNotificationsOutline } from 'react-icons/io';
+import { MdArrowUpward} from 'react-icons/md';
 import { IoSettings } from 'react-icons/io5';
 import { AiOutlineClose } from 'react-icons/ai';
 import Avatar from '@mui/material/Avatar';
@@ -45,16 +48,41 @@ import ToolTip from './components/ToolTip';
 import Footer from './components/Footer';
 import LeftNavDiv from './components/LeftNavDiv';
 import BottomNavbar from './components/BottomNavbar'
+import Home from './components/Home';
 function App() {
   const [Mode, setMode] = useState("");
+  const [bool1,setbool1]=useState(false)
   const handleClick = (lmao) => {
     setMode(lmao);
   }
   const handleClickNull = () => {
     setMode("");
   }
- 
- 
+  const MainContentRef = useRef();
+useEffect(() => {
+  const scrollDemo = document.querySelector(".MainContent");
+  const toTheTop = document.querySelector(".ToTop");
+    console.log("scrollheight",scrollDemo.scrollTop)
+    setbool1(!bool1);
+    if(scrollDemo.scrollTop>0)
+    {
+      toTheTop.style.display='block';
+    }
+    if(scrollDemo.scrollTop==0)
+    {
+      toTheTop.style.display='none';
+    }
+  },[bool1])
+
+
+const handleTop=()=>{
+  const scrollDemo = document.querySelector(".MainContent");
+  const to = document.querySelector(".ToTop");
+
+  scrollDemo.scrollTop=0;
+  
+
+    }
 
   return (
     <BrowserRouter>
@@ -62,7 +90,7 @@ function App() {
       <div className="Container">
         <LeftNavDiv/>
 
-        <div className='MainContent' style={{"display":"flex","flexDirection":"column"}}>
+        <div className='MainContent' ref={MainContentRef}style={{"display":"flex","flexDirection":"column"}}>
           {/* <div className="App">
       <h1>WDJ Virtual Call</h1>
 
@@ -71,7 +99,8 @@ function App() {
                 <BottomNavbar/>
 
 <Routes>
-            <Route exact path="/" element=<MainContentPage /> />
+            <Route exact path="/" element=<Home /> />
+            <Route exact path="/explore" element=<MainContentPage /> />
             <Route exact path="/friend" element=<Friend /> />
             <Route exact path="/live-stream/:roomId" element=<LiveStream /> />
             <Route exact path="/live-streams" element=<LiveStreams /> />
@@ -88,13 +117,15 @@ function App() {
             {/* <Route exact path="/call" element=<VideoRoom/> /> */}
 
           </Routes>
+          <button onClick={()=>handleTop()} className='ToTop'><MdArrowUpward/></button>
+
         </div>
 
         <div className='RightSideNav' >
 
 
           <div className='MainContentPageJsTop' >
-            <input type="text" className='SearchBox' placeholder='Search twitter' />
+            <input type="text" className='SearchBox' placeholder='Search...' />
           </div>
           <div className="RightSideNavTop" style={{ "marignTop": "3rem" }}>
 

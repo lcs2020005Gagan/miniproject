@@ -6,7 +6,7 @@ import { GiMaterialsScience } from 'react-icons/gi';
 import { BiBook } from 'react-icons/bi';
 import { SiHubspot } from 'react-icons/si';
 import { TbBuildingCastle } from 'react-icons/tb';
-import { MdArticle } from 'react-icons/md';
+import { MdArticle,MdExplore } from 'react-icons/md';
 import { IoIosPeople } from 'react-icons/io';
 import { AiFillInfoCircle } from 'react-icons/ai';
 import { GiCastle } from 'react-icons/gi';
@@ -29,6 +29,9 @@ function LeftSideNav() {
         {/* {`nav-link me-auto ${location.pathname==="/home"?"active":""}`} */}
             <Link to="/" className={`UlList hoverEffects ${location.pathname==="/"?"UlListActive":""}`}>
             <AiFillHome/> <p className='para'>Home</p>
+            </Link>
+            <Link to="/explore" className={`UlList hoverEffects ${location.pathname==="/explore"?"UlListActive":""}`}>
+            <MdExplore/> <p className='para'>Explore</p>
             </Link>
             <Link to="/foundations" className={`UlList hoverEffects ${location.pathname==="/foundations"?"UlListActive":""}`}>
                 <GiCastle/><p className='para'>Foundations</p>

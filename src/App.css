@@ -27,7 +27,8 @@ html{
   height: 100vh;
   max-height: 100vh;
   width: 20vw;
-  background-image:linear-gradient(#2c2e43,#8672af) ;
+  /* background-image:linear-gradient(#2c2e43,#8672af) ; */
+  background-color: rgb(2, 9, 22);
 
 }
 .LeftNavDivMob{
@@ -36,7 +37,7 @@ html{
   background-color: green;
   height: 100vh;
   width: 100%;
-  background-image:linear-gradient(#2c2e43,#8672af) ;
+  background-color: rgb(2, 9, 22);
 }
 .LeftNavDivTop{
   display:flex;
@@ -52,14 +53,15 @@ html{
   width: 25%;
   /* max-width: 5vw; */
   /* background-image:linear-gradient(#2c2e43,#8672af) ; */
-  border-right: 0.1rem;
+  /* border-right: 0.1rem;
   border-right-style: solid;
   border-image: 
   linear-gradient(
     to bottom, 
     grey, 
     #8d7cae
-  ) 1 100%;;
+  ) 1 100%;; */
+  border-right: 0.001rem solid grey;
   overflow-y: auto;
 }
 .LeftSideNav{
@@ -127,7 +129,7 @@ filter: brightness(70%);
   margin: 0;
   padding: 0;
   display: flex;
-  background-color: #1e1f3b;
+  background-color: rgb(2, 9, 22);
   height: 100vh;
   max-height: 100vh;
   width: 60vw;
@@ -138,13 +140,28 @@ filter: brightness(70%);
     position: relative;
 
 }
+.ToTop{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 10px;
+  right: 270px;
+  background: hsla(252, 94%, 6%, 0.9);
+  /* opacity: 1; */
+  border: 0.001rem solid grey;
+  color: white;
+
+}
 .RightSideNav
 {
   display: flex;
   /* position: fixed; */
   /* float: right; */
   /* background-image: linear-gradient(#2c2e43,#535564); */
-  background-color: #1e1f3b;
+  /* background-color: #1e1f3b; */
+  background-color: rgb(2, 9, 22);
+
   /* border-left: 0.1rem;
   border-left-style: solid;
   border-image: 
@@ -163,7 +180,7 @@ filter: brightness(70%);
 }
 .RightSideNavMob{
   display: flex;
-  background-color: #1e1f3b;
+  background-color: rgb(2, 9, 22);
    height: 100vh;
   width: 100%;
   overflow: auto;
@@ -224,7 +241,9 @@ filter: brightness(70%);
 }
 .UlListActive{
   /* background-image:linear-gradient(to right,black,#8672af) ; */
-  background-color: black;
+  /* background-color: black; */
+  background-image: linear-gradient(to right ,#64005b,#060830);
+
  text-decoration: none; 
   color:white;
   cursor:pointer;
@@ -277,7 +296,7 @@ filter: brightness(70%);
   padding: 0.5rem;
   width: 45px;
   height: 45px;
-  background-color: #494169;
+  /* background-color: #494169; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -390,7 +409,7 @@ box-shadow: 10px 10px 10px 10px #7498bf;
   flex: row;
   color:white;
   justify-content: space-between ;
-  background-color: #383b5a;
+  background-color: #151727;
   border-radius: 5px;
 }
 .NewMemberCard:hover{
@@ -430,7 +449,7 @@ min-width: 100%;
 }
 .SearchBox{
   width: 95%;
-  background-color:#5b5189;
+  background-color:#151727;
   border: 0;
   height: 100%;
   padding: 1rem;
@@ -540,7 +559,7 @@ min-width: 100%;
   align-items: center;
   padding: 0.7rem;
   /* background: hsla(252, 97%, 12%, 0.9); */
-  background-color: #1e1f3b;
+  background-color: rgb(2, 9, 22);
   opacity: 0.9;
   position: sticky;
   top: 0;
@@ -568,6 +587,9 @@ min-width: 100%;
   }
   .LeftSideNavOpener{
     display: none;
+  }
+  .ToTop{
+    right: 10px;
   }
 }
 @media screen and (max-width:800px) {
@@ -1818,7 +1840,7 @@ height:2rem;
   align-items: center;
   border-radius: 0.5rem;
   margin-bottom: 0.3rem;
-  background-color: #383b5a;
+  background-color: #151727;
   /* border: 1px solid grey; */
 }
 .RightSideCardJsInfo{
@@ -1872,6 +1894,7 @@ overflow: hidden;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+  background-color: #151727;
 }
 .RightSideCard2JsImg img{
   width: 3rem;
@@ -1885,8 +1908,10 @@ overflow: hidden;
 }
 .ToolTipJs{
  padding: 0.5rem;
- /* background-color: #1e1f3b; */
-  background: hsla(238, 80%, 12%, 0.9);
+ background-color: rgb(2, 9, 22);
+ border-radius: 1rem;
+ box-shadow: 0 0 5px 5px hsla(0, 0%, 100%, 0.8);
+  
   /* background-color: transparent; */
 
  margin: -0.9rem;
@@ -2523,3 +2548,80 @@ width: 100%;
   border: none;
   outline: none;
 }
+.Card9{
+  display: flex;
+  width: 100%;
+  height: 32rem;
+  gap: 1rem;
+  position: relative;
+  /* background-image: linear-gradient(#340230,#060721); */
+  border-top: 1px solid grey;
+  padding: 1rem;
+}
+.Card9Pic{
+  /* width: 20%; */
+  border-radius: 50%;
+  width: 10%;
+  height: calc(width);
+  justify-content: center;
+  position: sticky;
+  top: 1px;
+}
+.Card9Pic img{
+  border-radius: 50%;
+  width: 100%;
+  height: calc(width);
+  justify-content: center;
+  position: sticky;
+  top: 1px;
+}
+.Card9Cont{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 0.5rem;
+}
+.Card9Title{
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.3rem;
+}
+.Card9Date{
+  color: grey;
+  font-size: 0.8rem;
+}
+.Card9Content{
+  color: grey;
+  font-size: 1rem;
+}
+.Card9Image {
+  width:100%;
+  border-radius: 1rem;
+}
+.Card9Image img{
+  width:100%;
+  height: 18rem;
+  border-radius: 1rem;
+
+}
+.Card9Footer{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: grey;
+  font-size: 0.8rem;
+}
+.HomeJs{
+  padding-top: 1rem;
+  width: 100%;
+  background-color: rgb(2, 9, 22);
+}
+.HomeJs h1{
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+
+}
+
+

@@ -29,7 +29,7 @@ function Modal() {
 
   return (
     <div>
-<div className='hoverEffects' data-bs-toggle="modal" data-bs-target="#exampleModal" style={{"display":"flex","borderRadius":"1rem","backgroundColor":"#5b5189","height":"100%","width":"3rem","padding":"0.3rem","justifyContent":"center","alignItems":"center","color":"white"}} >
+<div className='hoverEffects' data-bs-toggle="modal" data-bs-target="#exampleModal" style={{"display":"flex","borderRadius":"1rem","backgroundColor":"#151727","height":"100%","width":"3rem","padding":"0.3rem","justifyContent":"center","alignItems":"center","color":"white"}} >
   <FiLogIn/>
 </div>
 
