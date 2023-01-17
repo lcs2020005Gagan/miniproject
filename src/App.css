@@ -2623,5 +2623,27 @@ width: 100%;
   text-align: center;
 
 }
-
+.MainContentRight{
+  display: flex;
+  flex-direction: column;
+  color: grey;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+.MainContentRight a{
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.MainContentRight h1{
+  font-size: 1.4rem;
+  letter-spacing: 0.7rem;
+text-align: center;
+}
+.hoverEffects3:hover{
+  border-left: 2px solid grey;
+  color: grey;
+  /* background-color: grey; */
+}
 

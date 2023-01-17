@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import { useEffect, useState,useRef } from 'react';
 import './App.css';
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -49,6 +50,7 @@ import Footer from './components/Footer';
 import LeftNavDiv from './components/LeftNavDiv';
 import BottomNavbar from './components/BottomNavbar'
 import Home from './components/Home';
+import MainContentRight from './components/MainContentRight';
 function App() {
   const [Mode, setMode] = useState("");
   const [bool1,setbool1]=useState(false)
@@ -183,6 +185,8 @@ const handleTop=()=>{
             <div className="RightSideRoute">
               <Routes>
                 <Route exact path="/" element=<RightSideNav /> />
+                <Route exact path="/explore" element=<MainContentRight /> />
+
                 <Route exact path="/story/:storyId" element=<StoryRightSideNav /> />
                 <Route exact path="/foundations" element=<FoundationsRightSideNav /> />
                 <Route exact path="/stories" element=<StoriesRightSideNav /> />

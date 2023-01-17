@@ -21,29 +21,48 @@ import BottomNavbar from './BottomNavbar';
 import Modall from './Modall'
 
 function MainContentPage() {
-   
 
-  const handleTop=()=>{
+
+  const handleTop = () => {
     const scrollDemo = document.querySelector(".MainContent");
-  
-    scrollDemo.scrollTop=0;
-  
-      }
-  
+
+    scrollDemo.scrollTop = 0;
+
+  }
+
   return (
     <div className='MainContentPageJs'>
-          {/* <div className="MainCarousel" style={{"marginBottom":"3rem","backgroundImage":"url(https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/banner-bg.png)"}}>
+      {/* <div className="MainCarousel" style={{"marginBottom":"3rem","backgroundImage":"url(https://raw.githubusercontent.com/judygab/web-dev-projects/main/personal-portfolio/src/assets/img/banner-bg.png)"}}>
             <Carousel2/>
           </div> */}
-          <div className='MainContentPageJsBottom'>
-           <WhatsHappening/>
-           <RecommendedForYou/>
-            <WhoToFollow/>
-            <RecentlyUpdated/>
-            <TimeLine/>
-            <Footer/>
+      <div className='MainContentPageJsBottom'>
+
+        <div id="whatshappening">
+          <WhatsHappening x/>x
+
           </div>
-          {/* <Card5/> */}
+          <div id="recommendedforyou">
+
+          <RecommendedForYou />
+        </div>
+
+        <div id="whotofollow">
+
+          <WhoToFollow />
+        </div>
+        <div id="recentlyupdated">
+          <RecentlyUpdated />
+
+        </div>
+        <div id="timeline">
+
+          <TimeLine />
+        </div>
+        <div id="footer">
+          <Footer />
+        </div>
+      </div>
+      {/* <Card5/> */}
     </div>
   )
 }
