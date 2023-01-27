@@ -1,10 +1,40 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FaRegThumbsUp, FaRegThumbsDown, FaThumbsDown, FaThumbsUp } from 'react-icons/fa'
 import NoContent from "./NoContent";
 import Modal2 from './Modal2'
 import Chip from '@material-ui/core/chip'
-
+import { Link, useParams } from "react-router-dom";
 function Story() {
+    const params=useParams();
+    var rand=0
+    const host="http://localhost:5000"
+    const [article,setArticle]=useState(null)
+    const [stop,setStop]=useState(true)
+    const [user,setUser]=useState(null)
+
+    useEffect(() => {
+      const func=async()=>{
+        console.log(params.storyId)
+        const response=await fetch(`${host}/api/upload/getarticle/${params.storyId}`,{
+            method: 'GET',
+          });
+          const json=await response.json();
+          setArticle(json);   
+        //   if(article)  
+        //   {
+        //       funcc();
+        //   }
+        //   else{
+        //     setStop(!stop)
+        //   }
+        }
+        func();
+        console.log(article);    
+
+    }, [])
+   
+    
+
 
     const [likes, setlikes] = useState(23)
     const [liked, setliked] = useState("")
@@ -39,14 +69,15 @@ function Story() {
     return (
         <div className='StoryJs'>
             <div className="StoryJsAuthor">
-                <div className="StoryJsAuthorPic">
-                    <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
-                </div>
-             
+               {article&& <Link to={`/profile/${article.author._id}`}>
+                {article&&<div className="StoryJsAuthorPic">
+                    <img src={article.author.profileImg} alt="" />
+                </div>}
+             </Link>}
                 <div className="StoryJsInfo">
-                    <div className="StoryJsAuthorName">
-                        Mark
-                    </div>
+                   {article&& <div className="StoryJsAuthorName">
+                        {article.author.name}
+                    </div>}
                     <div className="StoryJsInfoList">
                         <div className="StoryJsInfoListLeft">
 
@@ -77,25 +108,26 @@ function Story() {
 
             <div className="StroyJsContent">
                 
-                <div className="StoryJsContentImg">
-                    <img src="https://drscdn.500px.org/photo/143495567/m%3D900/ac580b90976ce1a4da085b52e91dbf71" alt="" />
-                </div>
-                <div className="Card3InfoTags" style={{"color":"grey"}}>
+                {article&&<div className="StoryJsContentImg">
+                    <img src={article.image} alt="" />
+                </div>}
+               {article&& <div className="Card3InfoTags" style={{"color":"grey"}}>
         Tags:
-        <Chip label="Chip Outlined" variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>
-        <Chip label="Chip Outlined" variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>
-        <Chip label="Chip Outlined" variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>
-        </div>
-                <div className="StoryJsContentTitle" style={{"fontSize":"2rem","color":"white"}}>
-                    This is the title
-                </div>
-                <div className="StoryJsContentpara">
+       
+        {article.tags.length&&<Chip label={article.tags[0]}variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>}
+        {article.tags.length>1&&<Chip label={article.tags[1]}variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>}
+        {article.tags.length>2&&<Chip label={article.tags[2]}variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>}
+        {article.tags.length>3&&<Chip label={article.tags[3]}variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>}
+        {article.tags.length>4&&<Chip label={article.tags[4]}variant="outlined" className='ChipMui hoverEffects' style={{"color":"rgb(129, 115, 249)","border":"1px solid rgb(129, 115, 249)","fontSize":"0.7rem"}}/>}
+        
+        </div>}
+                {article&&<div className="StoryJsContentTitle" style={{"fontSize":"2rem","color":"white"}}>
+                {article.title}                
+                </div>}
+                {article&&<div className="StoryJsContentpara">
 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, maiores! Dolorem doloremque consequatur quo ex, molestiae adipisci quam voluptate voluptatibus temporibus, repellat architecto nobis minus et similique, impedit rem? Iure?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, maiores! Dolorem doloremque consequatur quo ex, molestiae adipisci quam voluptate voluptatibus temporibus, repellat architecto nobis minus et similique, impedit rem? Iure?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, maiores! Dolorem doloremque consequatur quo ex, molestiae adipisci quam voluptate voluptatibus temporibus, repellat architecto nobis minus et similique, impedit rem? Iure?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, maiores! Dolorem doloremque consequatur quo ex, molestiae adipisci quam voluptate voluptatibus temporibus, repellat architecto nobis minus et similique, impedit rem? Iure?
-                </div>
+               {article.description}
+                </div>}
             </div>
             {/* <NoContent/> */}
         </div>

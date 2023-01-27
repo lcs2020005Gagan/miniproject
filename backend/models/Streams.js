@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const programsSchema = new mongoose.Schema({
+const streamsSchema = new mongoose.Schema({
  title:{
     type:String,
     required:true
@@ -23,6 +23,6 @@ type:String
     type:Array,
  },
 });
-const programs = mongoose.model("streams", programsSchema);
-programs.createIndexes();
-module.exports = programs;
+const streams = mongoose.model("streams", streamsSchema);
+streams.createIndexes();
+module.exports = streams;

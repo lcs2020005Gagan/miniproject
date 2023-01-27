@@ -10,6 +10,7 @@ import {TiDocumentAdd} from 'react-icons/ti'
 import JoditEditor from "jodit-react"
 import { borderRadius } from '@mui/system';
 import { InputTags } from 'react-bootstrap-tagsinput'
+import {FaBuilding} from 'react-icons/fa'
 import 'react-bootstrap-tagsinput/dist/index.css'
 import {
   MDBContainer,
@@ -46,8 +47,8 @@ export default function BasicModal(props) {
   };
   const editor=useRef(null)
   const [content, setcontent] = useState('')
-  const [tags, setTags] = useState([])
-  const [note, setnote] = useState({ title: "",image:"" });
+  const [aim, setAim] = useState([])
+  const [note, setnote] = useState({ name: "",email:"",password:"",profileImg:"" });
   const handlechange = (e) => {
     setnote({ ...note, [e.target.name]: e.target.value })
     // console.log(note);
@@ -56,52 +57,52 @@ export default function BasicModal(props) {
       if(e.key !== 'Enter') return
       const value = e.target.value
       if(!value.trim()) return
-      setTags([...tags, value])
+      setAim([...aim, value])
       e.target.value = ''
   }
 
   function removeTag(index){
-      setTags(tags.filter((el, i) => i !== index))
+      setAim(aim.filter((el, i) => i !== index))
   }
   const navigate = useNavigate();
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    const title = note.title
-    const image = note.image
-    const description=content
-    const authtoken=localStorage.getItem('token');
-    const response = await fetch("http://localhost:5000/api/upload/addarticle", {
-        method: 'POST',
-        headers: {
-            'auth-token':(localStorage.getItem('token')),
-            'Content-Type': 'application/json',
-            
-        },
-        body: JSON.stringify({ title ,description,image,tags}),
-    });
-    const json = await response.json();
-    console.log(json);
-    if (json) {
-        
-        console.log("success mf")
-        // navigate('/');
-        handleClose();
-
-    }
-    else {
-        console.log("invalid cred")
-    }
+      const name=note.name
+      const email=note.email
+      const password=note.password
+      const profileImg=note.profileImg
+      const about=content
+          const response=await fetch("http://localhost:5000/api/auth/createfoundation",{
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({name,email,about,password,profileImg,aim}),
+            });
+          const json=await response.json();
+          console.log(json);
+          if(json)
+          {
+            console.log(json);
+            localStorage.setItem('foundation',json.authtoken)
+            handleClose();
+          }
+          else
+          {
+            // alert("invalid cred");
+            console.log("invalid cred")
+          }
+  
 
 }
 
   return (
     <div>
 <div className="Card8Share" onClick={handleOpen}>
-    <div className="RightSideNavBut hoverEffects2">
-
-Post Your Story <TiDocumentAdd/>
-    </div>
+<div className="RightSideNavBut hoverEffects2">
+        Register Foundation <FaBuilding/>
+      </div>
           </div>      
           <Modal
         open={open}
@@ -116,27 +117,31 @@ Post Your Story <TiDocumentAdd/>
             </div>
         <div id="formStory">
         
-        <MDBInput wrapperClass='mb-4' label='Title' id='form1' name='title' type='text' onChange={handlechange}  />
-      <MDBInput wrapperClass='mb-4' label='Paste your image url here' id='form2' type='text' name='image' onChange={handlechange}/>
+        <MDBInput wrapperClass='mb-4' label='Name' id='form1' name='name' type='text' onChange={handlechange}  />
+      <MDBInput wrapperClass='mb-4' label='Email' id='form2' type='email' name='email' onChange={handlechange}/>
+      <MDBInput wrapperClass='mb-4' label='Password' id='form3' type='password' name='password' onChange={handlechange}/>
+      <MDBInput wrapperClass='mb-4' label='Profile image url' id='form4' type='text' name='profileImg' onChange={handlechange}/>
+   
 
-        <div className="cont mb-5" >
-    <label for="exampleInputEmail1" class="form-label" style={{"fontSize":"1.3rem"}}>Description</label>
+      <div className="cont mb-5" >
+    <label for="exampleInputEmail1" class="form-label" style={{"fontSize":"1.3rem"}}>About</label>
             <JoditEditor style={{"width":"100%","border":"1px solid black"}}ref={editor} value={content} onChange={newContent=>{setcontent(newContent)}}/>
             </div>
-        <div className="cont mb-3">
+    <div className="cont mb-3">
 
         <div className="tags-input-container">
 
-            { tags.map((tag, index) => (
+            { aim.map((tag, index) => (
                 <div className="tag-item" key={index}>
                     <span className="text">{tag}</span>
                     <span className="close" onClick={() => removeTag(index)}>&times;</span>
                 </div>
             )) }
-            <input onKeyDown={handleKeyDown} type="text" className="tags-input" placeholder="Add tags" />
+            <input onKeyDown={handleKeyDown} type="text" className="tags-input" placeholder="Add aim" />
         </div>
         </div>
 
+        
   <button type="submit" class="btn btn-primary" id="postButton" onClick={handlesubmit}>Post</button>
 </div>
           

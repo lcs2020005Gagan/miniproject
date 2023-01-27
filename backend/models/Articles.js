@@ -13,7 +13,7 @@ const articlesSchema = new mongoose.Schema({
     type:String
  },
  author:{
-   type: mongoose.Schema.Types.ObjectId, ref:'Users'
+   type: mongoose.Schema.Types.ObjectId, ref:'users'
 },
  date:{
     type:Date,

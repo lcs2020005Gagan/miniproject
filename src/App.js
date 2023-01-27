@@ -14,6 +14,7 @@ import {
 
 import { BiSend } from 'react-icons/bi';
 import { IoMdNotificationsOutline } from 'react-icons/io';
+import { FiLogOut } from 'react-icons/fi';
 import { MdArrowUpward} from 'react-icons/md';
 import { IoSettings } from 'react-icons/io5';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -60,11 +61,13 @@ function App() {
   const handleClickNull = () => {
     setMode("");
   }
+  const handleLogout=()=>{
+    localStorage.clear('token')
+  }
   const MainContentRef = useRef();
 useEffect(() => {
   const scrollDemo = document.querySelector(".MainContent");
   const toTheTop = document.querySelector(".ToTop");
-    console.log("scrollheight",scrollDemo.scrollTop)
     setbool1(!bool1);
     if(scrollDemo.scrollTop>0)
     {
@@ -74,7 +77,7 @@ useEffect(() => {
     {
       toTheTop.style.display='none';
     }
-  },[bool1])
+  },[])
 
 
 const handleTop=()=>{
@@ -119,7 +122,7 @@ const handleTop=()=>{
             {/* <Route exact path="/call" element=<VideoRoom/> /> */}
 
           </Routes>
-          <button onClick={()=>handleTop()} className='ToTop'><MdArrowUpward/></button>
+          <button onClick={()=>handleTop()} className='ToTop'>Back To Top <MdArrowUpward/></button>
 
         </div>
 
@@ -138,7 +141,8 @@ const handleTop=()=>{
             <div className='RightSideNavTopIcon'>
               <IoSettings onClick={() => handleClick('settings')} />
             </div>
-            <Modall />
+            {localStorage.getItem('token')===null&&<Modall />}
+            {localStorage.getItem('token')!==null&&<div className='logout'><FiLogOut className="hoverEffects" onClick={()=>handleLogout()} /></div>}
           </div>
           {
             Mode === "notifications" && <div className="RightSideNavBottom Notifs">
