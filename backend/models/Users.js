@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
 mongoose.set('debug', true);
 
+
 const usersSchema=new mongoose.Schema({
 name:{
     type:String,
@@ -14,7 +15,10 @@ password:{
     type:String,
     required:true
 },
-
+date:{
+    type:Date,
+    default:Date.now()
+},
 about:{
     type:String,
     required:true

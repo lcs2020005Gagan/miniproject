@@ -86,6 +86,7 @@ export default function BasicModal(props) {
         
         console.log("success mf")
         // navigate('/');
+        window.location.reload();
         handleClose();
 
     }

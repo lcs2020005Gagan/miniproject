@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import Avatar from '@mui/material/Avatar';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { Link } from 'react-router-dom'
@@ -8,8 +8,27 @@ import ToolTip from "./ToolTip";
 
 
 function SideIconsJs() {
+       const host="http://localhost:5000"
+       const [user,setUser]=useState(null)
+       useEffect(() => {
+              const getUserProfile=async ()=>{
+                    const response=await fetch(`${host}/api/auth/getuser2`,{
+                        method: 'GET',
+                        headers: {
+                          'auth-token': localStorage.getItem('token')
+                        },
+                      });
+                
+                      const json=await response.json();
+                     //  console.log("side",json);
+                     setUser(json[0])    
+                    }
+                    getUserProfile();
+                    console.log(user);
+          }, [])
        return (
               <div className="SideIconsJs">
+
                      <Link to="/friend?connection=1">
                             <div className='Avatars'>
                                    <Tooltip title={<ToolTip img="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=466&q=80" link="/profile/123" name="Mark" about="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, sunt deleniti? Illum " footer="114 likes" />} arrow  placement="right" style={{"backgroundColor":"red"}}>

@@ -62,7 +62,7 @@ export default function BasicModal(props) {
         if(json.success)
         {
           localStorage.setItem('token',json.authtoken)
-handleClose();          
+          window.location.reload();
         }
         else
         {
@@ -95,7 +95,8 @@ handleClose();
             //redirect
             console.log(json);
             localStorage.setItem('token',json.authtoken)
-            handleClose();
+            // handleClose();
+            window.location.reload();
           }
           else
           {

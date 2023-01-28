@@ -63,6 +63,7 @@ function App() {
   }
   const handleLogout=()=>{
     localStorage.clear('token')
+    window.location.reload();
   }
   const MainContentRef = useRef();
 useEffect(() => {
@@ -134,13 +135,14 @@ const handleTop=()=>{
           </div>
           <div className="RightSideNavTop" style={{ "marignTop": "3rem" }}>
 
-            <div className='RightSideNavTopIcon'>
+           {localStorage.getItem('token')&& <div className='RightSideNavTopIcon'>
               <IoMdNotificationsOutline onClick={() => handleClick('notifications')} />
 
-            </div>
-            <div className='RightSideNavTopIcon'>
+            </div>}
+            {localStorage.getItem('token')&&<div className='RightSideNavTopIcon'>
               <IoSettings onClick={() => handleClick('settings')} />
-            </div>
+            </div>}
+
             {localStorage.getItem('token')===null&&<Modall />}
             {localStorage.getItem('token')!==null&&<div className='logout'><FiLogOut className="hoverEffects" onClick={()=>handleLogout()} /></div>}
           </div>

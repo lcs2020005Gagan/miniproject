@@ -4,6 +4,8 @@ import {HiSparkles} from 'react-icons/hi'
 import Carousel from './Carousel'
 import FoundMain from './FoundMain'
 import FoundCont from './FoundCont'
+import Footer from './Footer'
+
 function Home() {
   
   return (
@@ -20,6 +22,9 @@ function Home() {
         <Card9/>
         <Card9/>
         <Card9/>
+        <div id="footer">
+          <Footer />
+        </div>
     </div>
   )
 }

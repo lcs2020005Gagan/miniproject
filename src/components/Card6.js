@@ -1,18 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Modal2 from './Modal2'
 
-function Card6() {
+function Card6(props) {
     return (
-        <div>
-
+        <Link to={`/profile/${props._id}`}>
             <div className="profile-card-2">
-                <img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-2.jpg" className="img img-responsive" />
-                <div className="profile-name">JOHN DOE</div>
-                <div className="profile-username">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti delectus praesentium rem quod maxime aliquam eaque fugit magni deserunt minus eum harum ipsam accusantium, aut amet fugiat molestiae facere temporibus?"</div>
+                <img src={props.profileImg} className="img img-responsive" />
+                <div className="profile-name textClip-1">{props.name}</div>
+                <div className="profile-username textClip-3">{props.about}</div>
                 <div className="profile-icons"><Modal2/></div>
             </div>
-        </div>
-
+            </Link>
     )
 }
 

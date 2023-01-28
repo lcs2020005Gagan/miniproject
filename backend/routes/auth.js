@@ -143,6 +143,48 @@ router.get('/getuser',fetchuser,
   .catch(error=>console.log(error));
   });
 
+
+//getuserwithpopulatedfriends
+router.get('/getuser2',fetchuser,
+  async (req, res) => {
+    await User.find({_id:req.id})
+    .populate("friends")
+  .select("-password")
+  .exec()
+  .then(p=>{
+      res.status(200).json(p)
+  })
+  .catch(error=>console.log(error));
+  });
+
+
+  //getallusers
+router.get('/getallusers',async (req,res)=>{
+    const cards= User.find()
+    .select("-password")
+    .exec()
+    .then(p=>{
+         res.status(200).json(p)
+     })
+     .catch(error=>console.log(error));
+   })
+
+   //get a user with specific id
+   router.get('/getuserwithid/:id', async (req, res) => {
+    try {
+      console.log("hey")
+        let user =await User.find({_id:req.params.id});
+        if(!user)
+        {
+            res.status(498).send("User note found");
+        }
+       user=await User.findById(req.params.id);
+        res.json(user);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
   
 
 
