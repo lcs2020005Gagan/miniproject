@@ -35,25 +35,21 @@ function OrganizationAchievements() {
             <div className="col-12">
                 <div className="skill-bx wow zoomIn">
                     <h2>Achievements</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br></br> Lorem Ipsum has been the industry's standard dummy text.</p>
+                    <p>We have been able to connect over a million donors with over 400 charity foundations.</p>
                     <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                         <div className="item">
                             <img src={meter1} alt="Image" />
-                            <h5>World percentage reached</h5>
+                            <h5>Donors engagement ratio</h5>
                         </div>
                         <div className="item">
                             <img src={meter2} alt="Image" />
-                            <h5>Population impacted</h5>
+                            <h5>Delighted volunteers</h5>
                         </div>
                         <div className="item">
                             <img src={meter3} alt="Image" />
-                            <h5>Population educated</h5>
+                            <h5>Population impacted</h5>
                         </div>
-                        <div className="item">
-                            <img src={meter1} alt="Image" />
-                            <h5>Cured</h5>
-                        </div>
-                    </Carousel>
+                     </Carousel>
                 </div>
             </div>
         </div>

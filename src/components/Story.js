@@ -124,9 +124,8 @@ function Story() {
                 {article&&<div className="StoryJsContentTitle" style={{"fontSize":"2rem","color":"white"}}>
                 {article.title}                
                 </div>}
-                {article&&<div className="StoryJsContentpara">
+                {article&&<div className="StoryJsContentpara"  dangerouslySetInnerHTML={{__html: article.description}}>
 
-               {article.description}
                 </div>}
             </div>
             {/* <NoContent/> */}

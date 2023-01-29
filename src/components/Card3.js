@@ -73,7 +73,7 @@ const [liked, setliked] = useState("")
         {user&&<div className="Card3Author">
           <Tooltip title={<ToolTip img={user.profileImg} link={`/profile/${user._id}`} name={user.name} about={user.about} footer="114 friends"/>} arrow >
             <div className="Card3AuthorPic">
-             <Link to={`profile/${user._id}`}>
+             <Link to={`/profile/${user._id}`}>
             <img src={user.profileImg} alt="" className="hoverEffects"/>
              </Link>
             

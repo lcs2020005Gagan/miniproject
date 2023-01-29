@@ -13,7 +13,7 @@ function Card2(props) {
 
             </div>
             <div className='Card2InfoFoot'>
-            <Link to={`/foundation/${props._id}`}>
+            <Link to={`/foundation/${props._id}`} style={{"color":"grey"}}>
             Learn More ->
             </Link>
                 <Modal2/>

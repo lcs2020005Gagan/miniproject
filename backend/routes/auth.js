@@ -173,7 +173,7 @@ router.get('/getallusers',async (req,res)=>{
    router.get('/getuserwithid/:id', async (req, res) => {
     try {
       console.log("hey")
-        let user =await User.find({_id:req.params.id});
+        let user =await User.find({_id:req.params.id})
         if(!user)
         {
             res.status(498).send("User note found");
@@ -186,6 +186,34 @@ router.get('/getallusers',async (req,res)=>{
     }
 })
   
+
+//add friend
+router.post('/addfriend', fetchuser, [
+  body('user_id'),
+ ], async (req, res) => {
+      try {
+          const user_id = req.body.user_id;
+         await User.findOneAndUpdate({
+            _id:req.id
+          },{
+            $push:{
+              friends:user_id
+            }
+          })
+          await User.findOneAndUpdate({
+            _id:user_id
+          },{
+            $push:{
+              friends:req.id
+            }
+          })
+          const user=await User.find({_id:req.id});
+          res.json(user);
+      } catch (error) {
+          console.error(error.message);
+          res.status(500).send("Internal Server Error");
+      }
+  })
 
 
 //get name and profile image for user

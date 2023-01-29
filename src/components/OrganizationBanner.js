@@ -9,9 +9,9 @@ function OrganizationBanner() {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
+  const [delta, setDelta] = useState(100 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Child Care", "World hunger", "Education" ];
+  const toRotate = [ "Connect charities with donors", "Make world a better place"];
   const period = 2000;
 
   useEffect(() => {
@@ -54,16 +54,16 @@ function OrganizationBanner() {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <span className="tagline">Organization name</span>
+                <span className="tagline">THE GIVING HUB</span>
                 <div className="OrganizationTextBox">
-                <h1>{`Our aim : `} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Child care", "World hunger", "Education" ]'><span className="wrap">{text}</span></span></h1>
+                <h1>{`Our aim : `} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Connect charities with donors", "Make world a better place" ]'><span className="wrap">{text}</span></span></h1>
                 </div>
               
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                  <p>The Giving Hub was built to connect the charity websites and other trusts to find a better place to connect with their donors and make an impact in the world.</p>
                   <div className="OrganizationBannerButtons">
 
-                  <button onClick={() => console.log('connect')}>Get Involved<ArrowRightCircle size={25} /></button>
-                  <button >Subscribe</button>
+                  {/* <button onClick={() => console.log('connect')}>Get Involved<ArrowRightCircle size={25} /></button>
+                  <button >Subscribe</button> */}
                   </div>
 
               </div>}

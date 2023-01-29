@@ -38,26 +38,23 @@ function MainContentPage() {
       <div className='MainContentPageJsBottom'>
 
         <div id="whatshappening">
-          <WhatsHappening x/>x
-
+          <WhatsHappening/>
           </div>
           <div id="recommendedforyou">
-
           <RecommendedForYou />
         </div>
 
         <div id="whotofollow">
-
           <WhoToFollow />
         </div>
         <div id="recentlyupdated">
           <RecentlyUpdated />
 
         </div>
-        <div id="timeline">
+        {/* <div id="timeline">
 
           <TimeLine />
-        </div>
+        </div> */}
         <div id="footer">
           <Footer />
         </div>

@@ -7,8 +7,7 @@ function TimeLine() {
   return (
     <div className='RecentlyUpdatedJs'>
       <div className="RecentlyUpdatedTop" style={{ "display": "flex", "justifyContent":"space-between","color":"white","fontSize":"1.5rem" }}>
-        <div className="RecentlyUpdatedTopTitle">Jump Right Back In <FaHistory /></div>
-        <SeeAll />
+        <div className="RecentlyUpdatedTopTitle">History <FaHistory /></div>
       </div>
       <div className="RecentlyUpdatedJsBottom" style={{"height":"100%"}}>
       <div className="container py-5">

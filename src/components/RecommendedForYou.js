@@ -6,11 +6,14 @@ import Card4 from './Card4'
 import Card6 from './Card6'
 import Card5 from './Card5'
 import Card8 from './Card8'
+import { ImFire } from 'react-icons/im'
+
 function RecommendedForYou() {
   return (
-    <div className='RecentlyUpdatedJs'>
+    <div className='RecentlyUpdatedJs' style={{"padding":"0.3rem"}}>
       <div className="RecentlyUpdatedTop" style={{ "display": "flex", "justifyContent":"space-between","color":"white","fontSize":"1.5rem" }}>
-        <div className="RecentlyUpdatedTopTitle">Recommended For You <BsFillTrophyFill  /></div>
+        {/* <div className="RecentlyUpdatedTopTitle">Recommended For You <BsFillTrophyFill  /></div> */}
+        <div className="RecentlyUpdatedTopTitle">What's Happening <ImFire /></div>
         <SeeAll />
       </div>
       <div className="RecentlyUpdatedJsBottom" style={{"height":"450px"}}>

@@ -6,9 +6,8 @@ import ToolTip from './ToolTip'
 import { Tooltip } from '@mui/material'
 function card4(props) {
   return (
-    <div>
+    <div className='card4'>
  
-   <Link to={`${props.link}`}className="card4">
      <img src={`${props.img}`}  className="card4__image" alt="" />
      <div className="card4__overlay">
        <div className="card4__header">
@@ -18,14 +17,16 @@ function card4(props) {
          </Tooltip>
          <div className="card4__header-text">
            <h3 className="card4__title">{props.author}</h3>
-           <span className="card4__tagline">{props.title}</span>            
-           <span className="card4__status">1 hour ago</span>
+           <span className="card4__tagline">{props.title}</span>    
+           <Link to={`${props.link}`}>        
+           <span className="card4__status">Learn More</span>
+           </Link>
+
          </div>
            <Modal2/>
        </div>
        <p className="card4__description">{props.desc}</p>
      </div>
-   </Link>
 
     </div>
   )

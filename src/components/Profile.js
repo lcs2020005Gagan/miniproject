@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Card2 from './Card2';
 import Card3 from './Card3';
 import NoContent from './NoContent';
+import TimeLine from './TimeLine';
 
 function Profile(toRender) {
     var rand=0
@@ -17,6 +18,7 @@ function Profile(toRender) {
     const host="http://localhost:5000"
     const [user,setUser]=useState(null)
     useEffect(() => {
+        console.log("params ",params.profileId)
         const func=async()=>
           { 
         const response=await fetch(`${host}/api/auth/getuserwithid/${params.profileId}`,{
@@ -25,11 +27,28 @@ function Profile(toRender) {
           const json=await response.json();
           setUser(json)
         }
-       
+        if(params.profileId!=="self")
             func();
-            // console.log("user ",user)
-            // console.log(date.toDateString())
+             
       },[])
+      useEffect(()=>{
+        const getUserProfile=async ()=>{
+            const response=await fetch(`${host}/api/auth/getuser2`,{
+                method: 'GET',
+                headers: {
+                  'auth-token': localStorage.getItem('token')
+                },
+              });
+        
+              const json=await response.json();
+             //  console.log("side",json);
+             setUser(json[0])    
+            }
+            if(params.profileId==="self"&&localStorage.getItem('token'))
+            {
+                getUserProfile();
+            }
+      })
 
   return (
     <div className='ProfileJs' >
@@ -81,6 +100,15 @@ function Profile(toRender) {
             </Link>
 
             </div>
+            <div className={`${toRender.toRender==="history"?"UlListActive":""} ProfileJsTabsLi`}>
+
+<Link to={`/profile/${profileId}/history`} style={{"textDecoration":"none"}}>
+
+<li >
+    History
+</li>
+</Link>
+</div>
         </div>
         <div className='ProfileJsUnderTabs'>
         {toRender.toRender==="subscriptions"&&<div className='ProfileJsUnderTabsCon'>
@@ -97,6 +125,7 @@ function Profile(toRender) {
             {toRender.toRender==="contributions"&&<div className='ProfileJsUnderTabsCon'>
             <Card2/>
             </div>}
+
             {toRender.toRender==="liked"&&<div className='ProfileJsUnderTabsCon'>
             {user&&user.savedForLater.map((element) => {
     return <div key={rand++} style={{"padding":"0","margin":"0","height":"16rem","width":"100%"}}>
@@ -108,6 +137,10 @@ function Profile(toRender) {
     user&&user.savedForLater.length===0&&<NoContent/>
 }
           </div>}
+
+          {toRender.toRender==="history"&&<div className='ProfileJsUnderTabsCon'>
+            <TimeLine/>
+            </div>}
             
         </div>
        

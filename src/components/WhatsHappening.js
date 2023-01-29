@@ -8,7 +8,7 @@ import Card5 from './Card5'
 import Card8 from './Card8'
 function WhatsHappening() {
   return (
-<div className='RecentlyUpdatedJs'>
+<div className='RecentlyUpdatedJs' style={{"padding":"0.3rem"}}>
       <div className="RecentlyUpdatedTop" style={{ "display": "flex", "justifyContent":"space-between","color":"white","fontSize":"1.5rem" }}>
         <div className="RecentlyUpdatedTopTitle">What's Happening <ImFire /></div>
         <SeeAll />

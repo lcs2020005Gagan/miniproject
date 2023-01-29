@@ -52,6 +52,8 @@ import LeftNavDiv from './components/LeftNavDiv';
 import BottomNavbar from './components/BottomNavbar'
 import Home from './components/Home';
 import MainContentRight from './components/MainContentRight';
+import ScrollButton from './components/ScrollButton';
+import FoundationMain from './components/FoundationMain';
 function App() {
   const [Mode, setMode] = useState("");
   const [bool1,setbool1]=useState(false)
@@ -66,20 +68,22 @@ function App() {
     window.location.reload();
   }
   const MainContentRef = useRef();
-useEffect(() => {
-  const scrollDemo = document.querySelector(".MainContent");
-  const toTheTop = document.querySelector(".ToTop");
-    setbool1(!bool1);
-    if(scrollDemo.scrollTop>0)
-    {
-      toTheTop.style.display='block';
-    }
-    if(scrollDemo.scrollTop==0)
-    {
-      toTheTop.style.display='none';
-    }
-  },[])
-
+// useEffect(() => {
+//   const scrollDemo = document.querySelector(".MainContent");
+//   const toTheTop = document.querySelector(".ToTop");
+//     setbool1(!bool1);
+//     if(scrollDemo.scrollTop>0)
+//     {
+//       toTheTop.style.display='block';
+//     }
+//     if(scrollDemo.scrollTop==0)
+//     {
+//       toTheTop.style.display='none';
+//     }
+//   },[])
+// window.addEventListener('keydown', (event) => {
+//   console.log("scrolled")
+// });
 
 const handleTop=()=>{
   const scrollDemo = document.querySelector(".MainContent");
@@ -96,7 +100,7 @@ const handleTop=()=>{
       <div className="Container">
         <LeftNavDiv/>
 
-        <div className='MainContent' ref={MainContentRef}style={{"display":"flex","flexDirection":"column"}}>
+        <div className='MainContent' id="MainContentId" ref={MainContentRef}style={{"display":"flex","flexDirection":"column"}}>
           {/* <div className="App">
       <h1>WDJ Virtual Call</h1>
 
@@ -111,19 +115,23 @@ const handleTop=()=>{
             <Route exact path="/live-stream/:roomId" element=<LiveStream /> />
             <Route exact path="/live-streams" element=<LiveStreams /> />
             <Route exact path="/foundations" element=<Foundations /> />
-            <Route exact path="/foundation/:foundationId" element=<Organization /> />
+            <Route exact path="/foundation/:foundationId" element=<FoundationMain/> />
             <Route exact path="/profile/:profileId" element=<Profile toRender={"subscriptions"} /> />
             <Route exact path="/profile/:profileId/contributions" element=<Profile toRender={"contributions"} /> />
             <Route exact path="/profile/:profileId/liked" element=<Profile toRender={"liked"} /> />
+            <Route exact path="/profile/:profileId/history" element=<Profile toRender={"history"} /> />
             <Route exact path="/stream/:streamId" element=<Stream /> />
             <Route exact path="/streams" element=<Streams /> />
             <Route exact path="/stories" element=<Stories /> />
             <Route exact path="/story/:storyId" element=<Story /> />
+            <Route exact path="/about" element=<Organization /> />
 
             {/* <Route exact path="/call" element=<VideoRoom/> /> */}
 
           </Routes>
-          <button onClick={()=>handleTop()} className='ToTop'>Back To Top <MdArrowUpward/></button>
+          {/* <button onClick={()=>handleTop()} className='ToTop' id='ToTopId'>Back To Top <MdArrowUpward/></button> */}
+          <ScrollButton />
+
 
         </div>
 

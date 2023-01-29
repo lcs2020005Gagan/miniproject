@@ -37,7 +37,7 @@ function RightSideNav() {
                                     <image href="https://cpb-us-w2.wpmucdn.com/portfolio.newschool.edu/dist/2/485/files/2014/08/DSC_1004-2-1a1yqd6.jpg" width="150" height="100" />
                                 </pattern>
                             </defs>
-                            <Link to="/profile/123">
+                            <Link to="/profile/self">
 
                                 <polygon id="profilePic" className='hoverEffects' points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)" />
                             </Link>
