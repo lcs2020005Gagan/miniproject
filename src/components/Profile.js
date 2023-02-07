@@ -9,6 +9,7 @@ import Card2 from './Card2';
 import Card3 from './Card3';
 import NoContent from './NoContent';
 import TimeLine from './TimeLine';
+import ChangeProfileModall from './ChangeProfileModall';
 
 function Profile(toRender) {
     var rand=0
@@ -48,15 +49,16 @@ function Profile(toRender) {
             {
                 getUserProfile();
             }
-      })
+      },[])
 
   return (
     <div className='ProfileJs' >
         <div className="ProfileJsBanner">
             <img src={profileBanner} alt="image" />
         </div>
-        {user&&<div className='ProfileJsProfilePic'>
-            <img src={user.profileImg} alt="image" />
+        {user&&params.profileId==="self"&&<ChangeProfileModall profileImg={user.profileImg}/>}
+        {user&&params.profileId!=="self"&&<div className='ProfileJsProfilePic'>
+            <img src={user.profileImg} />
         </div>}
         {user&&<div className='ProfileJsProfileInfo'>
             <div className="ProfileJsProfileInfoBio">

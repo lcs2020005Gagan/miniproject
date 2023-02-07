@@ -169,6 +169,20 @@ router.get('/getallusers',async (req,res)=>{
      .catch(error=>console.log(error));
    })
 
+
+   //get all users for friends list
+   router.get('/getallusersforfriends',async (req,res)=>{
+    const cards= User.find()
+    .select("name")
+    .select("profileImg")
+    .select("_id")
+    .exec()
+    .then(p=>{
+         res.status(200).json(p)
+     })
+     .catch(error=>console.log(error));
+   })
+
    //get a user with specific id
    router.get('/getuserwithid/:id', async (req, res) => {
     try {
@@ -186,6 +200,9 @@ router.get('/getallusers',async (req,res)=>{
     }
 })
   
+  
+
+
 
 //add friend
 router.post('/addfriend', fetchuser, [
@@ -215,14 +232,99 @@ router.post('/addfriend', fetchuser, [
       }
   })
 
+  //add subscription
+router.post('/addsubscription', fetchuser, [
+  body('foundation_id'),
+ ], async (req, res) => {
+      try {
+          const foundation_id = req.body.foundation_id;
+         await User.findOneAndUpdate({
+            _id:req.id
+          },{
+            $push:{
+              followedFoundations:foundation_id
+            }
+          })
+          await Foundation.findOneAndUpdate({
+            _id:foundation_id
+          },{
+            $push:{
+              followers:req.id
+            }
+          })
+          const user=await User.find({_id:req.id});
+          res.json(user);
+      } catch (error) {
+          console.error(error.message);
+          res.status(500).send("Internal Server Error");
+      }
+  })
+
+
+  //update user profile pic
+router.post('/updateprofilepic', fetchuser, [
+  body('profileImg'),
+ ], async (req, res) => {
+      try {
+          const profileImg = req.body.profileImg;
+         await User.findOneAndUpdate({
+            _id:req.id
+          },{
+            $set:{
+              profileImg:profileImg
+            }
+          })
+         const user=await User.find({_id:req.id});
+          res.json(user);
+      } catch (error) {
+          console.error(error.message);
+          res.status(500).send("Internal Server Error");
+      }
+  })
 
 //get name and profile image for user
-router.post('/getunapi',fetchuser,
-  async (req, res) => {
-    await User.find({_id:req.id})
-  .select({name:1,profileImg:1})
-  .catch(error=>console.log(error));
-  });
+// router.post('/getunapiself',fetchuser,
+//   async (req, res) => {
+//     await User.find({_id:req.id})
+//   .select("name")
+//   .select("profileImg")
+//   .catch(error=>console.log(error));
+//   });
+router.get('/getunapiself',fetchuser,
+async (req, res) => {
+  await User.find({_id:req.id})
+.select("name")
+.select("profileImg")
+.select("_id")
+.exec()
+.then(p=>{
+    res.status(200).json(p)
+})
+.catch(error=>console.log(error));
+});
+
+  //get name and profile image for user
+// router.post('/getunapi',
+// async (req, res) => {
+//   await User.find({_id:req.id})
+// .select({name:1,profileImg:1,_id:1})
+// .catch(error=>console.log(error));
+// });
+router.get('/getunapi',
+async (req, res) => {
+  await User.find({_id:req.body.id})
+.select("name")
+.select("profileImg")
+.select("_id")
+.exec()
+.then(p=>{
+    res.status(200).json(p)
+})
+.catch(error=>console.log(error));
+});
+
+
+
 
 
 //login user

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-function RightSideCard(props) {
+function RightSideCard3(props) {
     // const [followers,setFollowers]=useState(0)
     // useEffect(() => {
     //  let i=0;
@@ -11,19 +11,19 @@ function RightSideCard(props) {
     // }, [])
     
     return (
-        <Link to={`/foundation/${props._id}`}>
+        <Link to={`/story/${props._id}`}>
             <div className='RightSideCardJs hoverEffects'>
                 <div className="RightSideCardJsImg ImageDiv">
-                    <img src={`${props.profileImg}`} alt="" />
+                    <img src={`${props.image}`} alt="" />
                 </div>
                 <div className="RightSideCardJsInfo">
                     <div className="RightSideCardJsTitle">
-                        {props.name}         
+                        {props.title}         
                          </div>
-                    <div className="RightSideCardJsDesc" dangerouslySetInnerHTML={{__html: props.about}}>
+                    <div className="RightSideCardJsDesc" dangerouslySetInnerHTML={{__html: props.description}}>
                       </div>
                     <div className="RightSideCardJsFooter">
-                        {props.followers&&props.followers.length} followers
+                        {props.likes} Likes
                     </div>
                 </div>
             </div>
@@ -31,4 +31,4 @@ function RightSideCard(props) {
     )
 }
 
-export default RightSideCard
+export default RightSideCard3

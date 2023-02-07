@@ -45,8 +45,25 @@ const { body, validationResult } = require('express-validator');
         }
     })
 
+//get trending foundations
+router.get('/trendingfoundations',async (req,res)=>{
+  const articles= Foundation.find().sort({followers:-1}).limit(3)
+   .exec()
+   .then(p=>{
+       res.status(200).json(p)
+   })
+   .catch(error=>console.log(error));
+ })
 
-
+//get trending articles
+router.get('/trendingarticles',async (req,res)=>{
+  const articles= Article.find().sort({likes:-1}).limit(3)
+   .exec()
+   .then(p=>{
+       res.status(200).json(p)
+   })
+   .catch(error=>console.log(error));
+ })
 
 
 
@@ -59,6 +76,7 @@ router.get('/getallarticles',async (req,res)=>{
      })
      .catch(error=>console.log(error));
    })
+
 
    //get all foundations
 router.get('/getallfoundations',async (req,res)=>{

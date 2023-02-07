@@ -35,6 +35,7 @@ import Card from './components/Card';
 import Organization from './components/Organization';
 import Profile from './components/Profile';
 import Stream from './components/Stream';
+import Page404 from './components/Page404';
 import AudioControls from './components/AudioControls';
 import SpeechWave from './components/SpeechWave';
 import Foundations from './components/Foundations';
@@ -110,7 +111,7 @@ const handleTop=()=>{
 
 <Routes>
             <Route exact path="/" element=<Home /> />
-            <Route exact path="/explore" element=<MainContentPage /> />
+            {/* <Route exact path="/explore" element=<MainContentPage /> /> */}
             <Route exact path="/friend" element=<Friend /> />
             <Route exact path="/live-stream/:roomId" element=<LiveStream /> />
             <Route exact path="/live-streams" element=<LiveStreams /> />
@@ -125,6 +126,8 @@ const handleTop=()=>{
             <Route exact path="/stories" element=<Stories /> />
             <Route exact path="/story/:storyId" element=<Story /> />
             <Route exact path="/about" element=<Organization /> />
+            <Route path='*' element=<Page404/>/>
+
 
             {/* <Route exact path="/call" element=<VideoRoom/> /> */}
 
@@ -152,7 +155,7 @@ const handleTop=()=>{
             </div>}
 
             {localStorage.getItem('token')===null&&<Modall />}
-            {localStorage.getItem('token')!==null&&<div className='logout'><FiLogOut className="hoverEffects" onClick={()=>handleLogout()} /></div>}
+            {localStorage.getItem('token')!==null&&<div className='logout hoverEffects'  onClick={()=>handleLogout()}><FiLogOut className="" /></div>}
           </div>
           {
             Mode === "notifications" && <div className="RightSideNavBottom Notifs">
@@ -199,7 +202,7 @@ const handleTop=()=>{
             <div className="RightSideRoute">
               <Routes>
                 <Route exact path="/" element=<RightSideNav /> />
-                <Route exact path="/explore" element=<MainContentRight /> />
+                {/* <Route exact path="/explore" element=<MainContentRight /> /> */}
 
                 <Route exact path="/story/:storyId" element=<StoryRightSideNav /> />
                 <Route exact path="/foundations" element=<FoundationsRightSideNav /> />
@@ -207,6 +210,8 @@ const handleTop=()=>{
                 <Route exact path="/streams" element=<StreamsRightSideNav /> />
                 <Route exact path="/profile/:profileId" element=<ProfileRightSideNav /> />
                 <Route exact path="/profile/:profileId/:x" element=<ProfileRightSideNav /> />
+                <Route path="*" element=<RightSideNav/>/>
+            
               </Routes>
             </div>
           }

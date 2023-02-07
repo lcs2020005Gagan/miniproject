@@ -5,6 +5,8 @@ import Modal2 from './Modal2'
 import Chip from '@material-ui/core/chip'
 import { Link, useParams } from "react-router-dom";
 function Story() {
+    const [likes, setlikes] = useState(0)
+    const [liked, setliked] = useState("")
     const params=useParams();
     var rand=0
     const host="http://localhost:5000"
@@ -29,15 +31,16 @@ function Story() {
         //   }
         }
         func();
-        console.log(article);    
+        // console.log(article);    
+        // setlikes(article.likes);
+
 
     }, [])
    
     
 
 
-    const [likes, setlikes] = useState(23)
-    const [liked, setliked] = useState("")
+    
     const handleLiked = () => {
         if (liked === "l") {
             setliked("");

@@ -6,6 +6,7 @@ import { Tooltip } from "@mui/material";
 
 import ToolTip from "./ToolTip";
 import FriendAvatar from './FriendAvatar';
+import StartChatModall from './StartChatModall';
 
 
 function SideIconsJs() {
@@ -26,7 +27,7 @@ function SideIconsJs() {
                      setUser(json[0])    
                     }
                     getUserProfile();
-                    console.log(user);
+              //       console.log(user);
           }, [])
        return (
               <div className="SideIconsJs">
@@ -81,15 +82,10 @@ function SideIconsJs() {
                         {user&&user.friends.map((element) => {
                      
     return <div key={user._id} style={{"padding":"0","margin":"0"}}>
-       <FriendAvatar {...element}/>
+       <FriendAvatar {...element} userId1={user._id}/>
     </div>
 })}
-                     <Tooltip title="Start a new chat" arrow  placement="bottom">
-                     <div className='CreateNew'>
-                            <AiOutlinePlus />
-
-                     </div>
-                     </Tooltip >
+              <StartChatModall/>
               </div>
        )
 }

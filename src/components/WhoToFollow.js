@@ -27,7 +27,7 @@ function WhoToFollow() {
   return (
 <div className='RecentlyUpdatedJs' style={{"padding":"0.3rem","borderTop":"1px solid grey","borderBottom":"1px solid grey"}}>
       <div className="RecentlyUpdatedTop" style={{ "display": "flex", "justifyContent":"space-between","color":"white","fontSize":"1.5rem" }}>
-        <div className="RecentlyUpdatedTopTitle">Who To Follow <RiUserFollowFill /></div>
+        <div className="RecentlyUpdatedTopTitle">Top Users <RiUserFollowFill /></div>
         <SeeAll />
       </div>
       <div className="RecentlyUpdatedJsBottom">
